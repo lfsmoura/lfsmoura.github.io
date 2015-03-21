@@ -177,6 +177,12 @@
         margin-bottom: $spacing-unit;
     }
 }
+.post-meta-main{
+    font-size: $small-font-size;
+    color: $grey-color;
+    float: left;
+    padding-right: 10%;
+}
 
 .post-meta {
     font-size: $small-font-size;

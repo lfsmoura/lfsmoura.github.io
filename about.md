@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+published: false
 ---
 
-This is my Bliki. Here I will share all interesting information I discover and things I do with my precious time.
+I'm Leo. This is my personal page.

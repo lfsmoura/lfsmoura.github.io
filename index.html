@@ -3,22 +3,23 @@ layout: default
 ---
 
 <div class="home">
+  <img src="{{site_url}}/assets/leo.jpeg" alt="Foto de Leonardo">
+
+  <h2>Bio</h2>
+  <p>
+    Eu nasci em Porto Alegre, Brasil. Eu sou bacharel e mestre em Ciência da Computação pela UFRGS (Porto Alegre, Brasil) e Engenheiro de Sistemas de Informática pela Ensimag (Grenoble, França).
 
   <p>
-    Informações sobre Leo.
+    I was born in Porto Alegre, Brazil. I have a bachelor's and a Master's degree in Computer Science from UFRGS (Porto Alegre, Brazil) and in Systems Engineering from Ensimag (Grenoble, France). 
   </p>
 
-  <hr/>
-  <h1 class="page-heading">Últimos artigos do blog</h1>
+  <h2>Últimos artigos do blog</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <span class="post-meta-main">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
