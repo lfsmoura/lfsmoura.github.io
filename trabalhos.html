@@ -3,5 +3,39 @@ layout: page
 title: Trabalhos
 permalink: /trabalhos/
 ---
+<h2>Projetos</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Título</th>
+    <th>Descrição</th>
+    <th>Última Atualização</th>
+  <tr>
+  </thead>
+  <tbody>
+{% for project in site.data.projects %}
+  <tr>
+    <td> {{ project.title }} </td>
+    <td> {{ project.desc }} </td>
+    <td> {{ project.lastupdate }} </td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
 
-Meus trabalhos
+
+<h2>Publicações</h2>
+<ul>
+{% for publication in site.data.publications %}
+  <li>
+    {{ publication.authors }}. 
+    <strong>{{ publication.title }}.</strong> 
+    {{ publication.info }}
+    {% if publication.url %}
+    [ <a href="{{ publication.url }}">
+        {{ publication.format }}</a>
+    ]
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

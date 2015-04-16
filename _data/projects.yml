@@ -1,0 +1,25 @@
+
+- title: Picnic Defense
+  desc: Tower defense game made using the libgdx library
+  lastupdate: 2014/04
+
+- title: Snake
+  desc: Snake simples feito em Javascript + html5
+  lastupdate: 25/05/2012
+
+- title: Tetris2
+  desc: Tetris feito em Javascript + html5
+  lastupdate: 17/09/2011
+
+- title: BomberRage 3D
+  desc: Baseado em Bomber Man, feito como projeto final da cadeira de Fundamentos de Computação Gráfica
+  lastupdate: 2010/01
+
+- title: BomberRage
+  desc: Baseado em Bomber Man, feito como projeto final da cadeira de Classificação e Pesquisa de Dados
+  lastudapte: 2008/01
+
+- title: Tetris
+  type: game
+  desc: Tetris feito em Flash
+  lastupdate: 2007/1

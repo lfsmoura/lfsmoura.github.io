@@ -11,7 +11,6 @@ github_username:  lfsmoura
 # Build settings
 markdown: redcarpet
 
-
 encoding: utf-8
 highlighter: pygments
 
