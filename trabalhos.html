@@ -15,7 +15,15 @@ permalink: /trabalhos/
   <tbody>
 {% for project in site.data.projects %}
   <tr>
-    <td> {{ project.title }} </td>
+    <td> 
+      {% if project.url %}
+      <a href='{{ project.url }}'>
+        {{ project.title }}
+      </a>
+      {% else %}
+      {{ project.title }} 
+      {% endif %}
+    </td>
     <td> {{ project.desc }} </td>
     <td> {{ project.lastupdate }} </td>
   </tr>
