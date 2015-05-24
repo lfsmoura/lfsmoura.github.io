@@ -16,7 +16,7 @@ highlighter: pygments
 
 #menu
 pages_list:       
-  Blog: '/blog'
-  Trabalhos: '/trabalhos'
+  Blog: '/blog/'
+  Trabalhos: '/trabalhos/'
   Lattes: http://lattes.cnpq.br/3495887322246706
-  Consultoria: '/consultoria'
+#  Consultoria: '/consultoria'

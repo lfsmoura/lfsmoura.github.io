@@ -1,0 +1,22 @@
+---
+layout: page
+title: Log
+permalink: /log/
+---
+
+<table class="table table-striped">
+    <thead>
+        <th>Data</th>
+        <th>Evento</th>
+    </thead>
+    <tbody>
+{% for post in site.posts %}
+{% if  post.categories contains 'log' %}
+        <tr>
+            <td>{{ post.date | date: "%b %-d, %Y" }}</td>
+            <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+        </tr>
+{% endif %}
+{% endfor %}
+    </tbody>
+</table>
