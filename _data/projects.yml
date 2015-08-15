@@ -1,10 +1,11 @@
 - title: Chat Super Cool
-  desc: "Chat desenvolvido com Backbone.js, Node.js, e Bootstrap."
+  desc: "Chat desenvolvido para aprender tecnologias web (Backbone.js, Node.js, Bootstrap, Angular etc)."
   url: "/projetos/2015/04/20/chat-backbone-node-express.html"
   lastupdate: 20/04/2015
 
 - title: Picnic Defense
   desc: Jogo estilo Tower defense feito em Java com a biblioteca LibGDX
+  url: "http://bit.ly/picnicdefense"
   lastupdate: 15/04/2014
 
 - title: Snake

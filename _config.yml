@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Leonardo Moura is a developer, writer, and artist.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://lfsmoura.github.io" # the base hostname & protocol for your site
-# twitter_username: leocaotico
+twitter_username: lfsmoura
 github_username:  lfsmoura
 
 # Build settings
@@ -17,6 +17,7 @@ highlighter: pygments
 #menu
 pages_list:       
   Blog: '/blog/'
+  Sobre: '/about/'
   Trabalhos: '/trabalhos/'
   Lattes: http://lattes.cnpq.br/3495887322246706
 #  Consultoria: '/consultoria'
