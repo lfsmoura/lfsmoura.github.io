@@ -1,0 +1,5 @@
+- title: Reconstruindo a torre de Babel com RequireJS
+  url: "../slides/babel/"
+  desc: Desafios da internacionalização e como resolvê-los em Javascript
+  where: TDC 2015
+  when: 24/09/2015

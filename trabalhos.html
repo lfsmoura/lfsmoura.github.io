@@ -31,6 +31,15 @@ permalink: /trabalhos/
 </tbody>
 </table>
 
+<h2>Apresentações</h2>
+<ul>
+{% for slide in site.data.slides %}
+  <li>
+  <a href="{{ slide.url }}">{{ slide.title }}</a> - {{ slide.desc }} - <em>apresentado em {{ slide.where}} </em>
+  
+  </li>
+{% endfor %}
+</ul>
 
 <h2>Publicações</h2>
 <ul>
