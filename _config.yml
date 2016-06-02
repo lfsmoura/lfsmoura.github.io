@@ -9,7 +9,7 @@ twitter_username: lfsmoura
 github_username:  lfsmoura
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 
 encoding: utf-8
 highlighter: pygments
