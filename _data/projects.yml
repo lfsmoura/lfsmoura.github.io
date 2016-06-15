@@ -1,7 +1,17 @@
+- title: global-state
+  desc: "Biblioteca baseada em redux e socket.io para sincronizar clientes através da Web"
+  url: "/javascript/bibliotecas/2016/06/02/global-state-redux.html"
+  lastupdate: 2016
+
+- title: Gerador de cruzadinhas
+  desc: "Gerador de cruzadinhas usando Angular e sails.js"
+  url: "http://nicecross.herokuapp.com/"
+  lastupdate: 2016
+
 - title: Chat Super Cool
   desc: "Chat desenvolvido para aprender tecnologias web (Backbone.js, Node.js, Bootstrap, Angular etc)."
   url: "/projetos/2015/04/20/chat-backbone-node-express.html"
-  lastupdate: 20/04/2015
+  lastupdate: 2016
 
 - title: Picnic Defense
   desc: Jogo estilo Tower defense feito em Java com a biblioteca LibGDX
@@ -10,21 +20,25 @@
 
 - title: Snake
   desc: Snake simples feito em Javascript + html5
+  url: "http://inf.ufrgs.br/~lfsmoura/jogos/snake.html"
   lastupdate: 25/05/2012
 
 - title: Tetris2
   desc: Tetris feito em Javascript + html5
+  url: "http://inf.ufrgs.br/~lfsmoura/jogos/tetris2.html"
   lastupdate: 17/09/2011
 
 - title: BomberRage 3D
   desc: Baseado em Bomber Man, feito como projeto final da cadeira de Fundamentos de Computação Gráfica
-  lastupdate: 2010/01
+  lastupdate: 2010
 
 - title: BomberRage
   desc: Baseado em Bomber Man, feito como projeto final da cadeira de Classificação e Pesquisa de Dados
-  lastupdate: 2008/01
+  url: "http://inf.ufrgs.br/~lfsmoura/jogos/bomber.html"
+  lastupdate: 2008
 
 - title: Tetris
   type: game
   desc: Tetris feito em Flash
-  lastupdate: 2007/1
+  url: "http://inf.ufrgs.br/~lfsmoura/jogos/tetris.html"
+  lastupdate: 2007
