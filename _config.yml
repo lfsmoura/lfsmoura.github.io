@@ -9,10 +9,9 @@ twitter_username: lfsmoura
 github_username:  lfsmoura
 
 # Build settings
-markdown: kramdown
-
 encoding: utf-8
 highlighter: pygments
+markdown: kramdown
 
 sitemap:
   file: "/sitemap.xml"
@@ -28,5 +27,5 @@ sitemap:
 #menu
 pages_list:
   Blog: '/blog/'
-  Sobre: '/about/'
+#  Sobre: '/about/'
   Trabalhos: '/trabalhos/'

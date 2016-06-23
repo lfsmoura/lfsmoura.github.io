@@ -35,9 +35,9 @@ Abaixo temos um diagrama mostrando como funciona. Imagine que o cliente 1 já es
 
 # Exemplo
 
-Vamos botar a mão na massa. Vamos fazer um jogo da velha multiplayer. [Veja o resultado](http://globalstate.herokuapp.com/).
+Vamos botar a mão na massa. Vamos fazer um jogo da velha multiplayer.
 
-A interface não tem muito mistério. Temos um botão de limpar o jogo e quando se clica em um bloco a jogada é feita. [Veja o código](https://github.com/lfsmoura/global-state-examples/tree/master/src/js).
+A interface não tem muito mistério. Temos um botão de limpar o jogo e quando se clica em um bloco a jogada é feita. [Veja o código](https://github.com/lfsmoura/global-state-examples/tree/simple-game/src/js).
 
 ![Exemplo](/assets/tictactoe.png)
 
@@ -63,4 +63,4 @@ require('global-state')(io);
 
 Pronto!
 
-No próximo post vamos ver como diferenciar os clientes e como criar múltiplas salas.
+No próximo post vamos ver [como diferenciar os clientes e como criar múltiplas salas]({% post_url 2016-06-22-exemplo-global-state-2 %}).
