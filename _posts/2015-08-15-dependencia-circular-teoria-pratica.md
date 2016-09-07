@@ -23,7 +23,7 @@ Educadores tentam fechar esse abismo através de exercícios em aula. Porém ess
  que já tiveram alguma experiência prática fora da classe de aula.
  
 É possível, no entanto, trazer um pouco do benefício de experiências prévias para as aulas através de uma técnica
-  psicológica chamada [*Learn Before Lecture (LBL)*](https://docs.google.com/document/d/113lSSHrLAhWiqHFCJpWrCD3WC64yoeWhWLTyPjbFKSk/edit?usp=sharing),
+r psicológica chamada [*Learn Before Lecture (LBL)*](http://escholarship.org/uc/item/28f2f768),
   ou aprender antes da aula. Alunos são expostos a perguntas relativas ao material antes dele ser ensinado. 
   Assim, quando o novo material é apresentado, alunos são capazes de ligar o novo material a uma necessidade anterior. 
   
