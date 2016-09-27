@@ -27,5 +27,6 @@ sitemap:
 #menu
 pages_list:
   Blog: '/blog/'
+  Livros: '/livros/'
 #  Sobre: '/about/'
   Trabalhos: '/trabalhos/'
