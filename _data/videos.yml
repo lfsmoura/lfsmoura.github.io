@@ -1,0 +1,160 @@
+-
+    publishedAt: '2016-10-04T13:07:02.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Ordenação Topológica (Algoritmos em Javascript)'
+    description: 'Como ordenar coisas que têm dependências? Ordenação topológica. Esse é o primeiro vídeo de uma série sobre algoritmos em javascript.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/MO4Lbr44Q_Y/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/MO4Lbr44Q_Y/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/MO4Lbr44Q_Y/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/MO4Lbr44Q_Y/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/MO4Lbr44Q_Y/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 0
+    resourceId:
+        kind: 'youtube#video'
+        videoId: MO4Lbr44Q_Y
+-
+    publishedAt: '2016-09-29T12:56:21.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Decorators tipo os do python em Javascript [parte 2/2]'
+    description: 'Quer fazer parte das pessoas legais que usam funções de alta ordem? Junte-se a nós com esse vídeo sobre decorators. Primeiro vemos como funciona em Python e depois implementamos em Javascript.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/nFKfli8oGFs/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/nFKfli8oGFs/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/nFKfli8oGFs/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/nFKfli8oGFs/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/nFKfli8oGFs/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 1
+    resourceId:
+        kind: 'youtube#video'
+        videoId: nFKfli8oGFs
+-
+    publishedAt: '2016-09-29T12:46:15.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Decorators tipo os do python em Javascript [parte 1/2]'
+    description: 'Quer fazer parte das pessoas legais que usam funções de alta ordem? Junte-se a nós com esse vídeo sobre decorators. Primeiro vemos como funciona em Python e depois implementamos em Javascript.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/n8ruk69Dsdg/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/n8ruk69Dsdg/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/n8ruk69Dsdg/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/n8ruk69Dsdg/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/n8ruk69Dsdg/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 2
+    resourceId:
+        kind: 'youtube#video'
+        videoId: n8ruk69Dsdg
+-
+    publishedAt: '2016-09-20T18:08:26.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Referências e variáveis em Javascript'
+    description: 'Porque Arrays e números funcionam diferente em javascript?'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/ltKrUlCho0A/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/ltKrUlCho0A/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/ltKrUlCho0A/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/ltKrUlCho0A/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/ltKrUlCho0A/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 3
+    resourceId:
+        kind: 'youtube#video'
+        videoId: ltKrUlCho0A
+-
+    publishedAt: '2015-11-26T22:19:01.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Contexto no Javascript'
+    description: 'Nesse tutorial abordamos uma questão que mais confunde os iniciantes de Javascript. O contexto –que não deve ser confundido com o escopo–é o objeto que é usado pela função. Se você ainda ficou com alguma dúvida deixe um comentário'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/v3dowexhQLA/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/v3dowexhQLA/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/v3dowexhQLA/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/v3dowexhQLA/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/v3dowexhQLA/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 4
+    resourceId:
+        kind: 'youtube#video'
+        videoId: v3dowexhQLA
