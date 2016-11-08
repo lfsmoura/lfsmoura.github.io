@@ -1,0 +1,9 @@
+jekyll:
+  build: .
+  command: jekyll s --host 0.0.0.0 --force_polling
+  volumes:
+    - ./.:/src
+  ports:
+    - "localhost:4000:4000"
+  expose:
+    - "4000"
