@@ -1,4 +1,176 @@
 -
+    publishedAt: '2016-11-15T22:41:42.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Pergunta preferida do Steve Ballmer da Microsoft'
+    description: 'A pergunta preferida de Steve Ballmer. Você tem que adivinhar que número ele está pensando. Você aceita jogar?'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/v12HMQnI-cU/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/v12HMQnI-cU/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/v12HMQnI-cU/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/v12HMQnI-cU/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 0
+    resourceId:
+        kind: 'youtube#video'
+        videoId: v12HMQnI-cU
+-
+    publishedAt: '2016-11-10T11:47:02.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Problemas de entrevista - FizzBuzz - Javascript'
+    description: 'Primeiro vídeo da série de perguntas de entrevista. FizzBuzz é um dos problemas mais clássicos de entrevista. Ele é usado como divisor de água entre quem sabe programar e quem não sabe. A lista de problemas de entrevista está em https://www.hackerrank.com/contests/programming-interviews-practice-session/challenges'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 1
+    resourceId:
+        kind: 'youtube#video'
+        videoId: K2M_O3z6DGM
+-
+    publishedAt: '2016-10-30T20:15:45.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Problema da Mochila [2/2] (Algoritmos em Javascript)'
+    description: "Hora de botar a mão na massa: vamos programar juntos e resolver o problema da mochila no site Hackerrank.\n\nResolva problemas: https://www.hackerrank.com \nReceba notificações do canal no seu e-mail: http://bit.ly/leomouranewsletter"
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/E0RnaIIPamw/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/E0RnaIIPamw/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/E0RnaIIPamw/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/E0RnaIIPamw/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 2
+    resourceId:
+        kind: 'youtube#video'
+        videoId: E0RnaIIPamw
+-
+    publishedAt: '2016-10-20T11:58:46.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Problema da Mochila [1/2] (Algoritmos em Javascript)'
+    description: 'Como maximizar o lucro quando temos algo com capacidade limitada? Veremos como funciona o algoritmo mais usado e teremos um gostinho de programação dinâmica.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/3krDd98tJgo/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/3krDd98tJgo/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/3krDd98tJgo/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/3krDd98tJgo/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/3krDd98tJgo/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 3
+    resourceId:
+        kind: 'youtube#video'
+        videoId: 3krDd98tJgo
+-
+    publishedAt: '2016-10-11T12:53:32.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Variáveis em Javascript'
+    description: 'Variáveis variam. Aprenda como usar variáveis e as duas coisas mais importantes sobre variáveis em Javascript.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 4
+    resourceId:
+        kind: 'youtube#video'
+        videoId: aMLLdaHAzJk
+-
+    publishedAt: '2016-10-11T12:53:36.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Expressões e Tipos em Javascript'
+    description: 'Esse é o primeiro vídeo da série de Javascript básico. Você vai aprender o tijolo básico de construção de programas que é a expressão e de quebra vai aprender quais tipos de expressões existem.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/U28jaDqtkKo/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/U28jaDqtkKo/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/U28jaDqtkKo/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/U28jaDqtkKo/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 5
+    resourceId:
+        kind: 'youtube#video'
+        videoId: U28jaDqtkKo
+-
     publishedAt: '2016-10-04T13:07:02.000Z'
     channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
     title: 'Ordenação Topológica (Algoritmos em Javascript)'
@@ -26,7 +198,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 0
+    position: 6
     resourceId:
         kind: 'youtube#video'
         videoId: MO4Lbr44Q_Y
@@ -58,7 +230,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 1
+    position: 7
     resourceId:
         kind: 'youtube#video'
         videoId: nFKfli8oGFs
@@ -90,7 +262,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 2
+    position: 8
     resourceId:
         kind: 'youtube#video'
         videoId: n8ruk69Dsdg
@@ -122,7 +294,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 3
+    position: 9
     resourceId:
         kind: 'youtube#video'
         videoId: ltKrUlCho0A
@@ -154,7 +326,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 4
+    position: 10
     resourceId:
         kind: 'youtube#video'
         videoId: v3dowexhQLA

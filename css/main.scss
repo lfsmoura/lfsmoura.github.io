@@ -70,17 +70,44 @@ hr.soften {
   margin-bottom: 100px;
 }
 
-#mc_embed_signup {
-  margin: 20px;
-  padding: 20px;
-}
-
 .mc-field-group {
   float: left;
-  margin-left: 20px;
 }
 
 #mce-responses {
   float: left;
   margin-left: 30px;
+}
+
+#mc-embedded-subscribe {
+  background-color: #333;
+}
+
+.site-footer {
+  border: 0;
+  color: #f4f4f4;
+  background-color: #333;
+  width: 100%;
+}
+
+.site-footer a {
+  color: #6bace4;
+}
+
+.site-footer a:hover {
+  color: #92ccff;
+}
+
+#mc_embed_signup {
+  padding: 0 20px 20px 0;
+}
+
+#mc_embed_signup h2 {
+  margin-top: 0;
+}
+
+#mc-embedded-subscribe {
+  background-color: #555;
+  border: 0;
+  padding: 3px 5px 3px 5px;
 }
