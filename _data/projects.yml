@@ -1,3 +1,8 @@
+- title: cachemock
+  desc: "Biblioteca que guarda chamadas assíncronas para criar mocks automaticos"
+  url: "/2017/03/04/automatic-mock-library.html"
+  lastupdate: 2017
+
 - title: global-state
   desc: "Biblioteca baseada em redux e socket.io para sincronizar clientes através da Web"
   url: "/javascript/bibliotecas/2016/06/02/global-state-redux.html"
