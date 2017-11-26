@@ -1,4 +1,232 @@
 -
+    publishedAt: '2017-11-24T00:49:24.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Tem Que Programar Todo Dia'
+    description: "Você realmente quer programar?\nVocê realmente quer ser o melhor programador?\n\ntem que programar todo dia\n\nse você quer ser um bom programador \ntem que programar todo dia\ntem que almoçar código\njantar código\n\nTem que tomar litros e litros de café! Tem que tomar café enquanto tu ta fazendo mais café!\n\nTem que programar todo dia!\nTem que debugar! todo dia. Conhecer os comandos do Vi de cor. Tem que decorar as teclas de atalho.\n\nO verdadeiro programador acorda mais cedo para programar. O verdadeiro programador não vai em balada, vai em conferência.\nSonha com loop infinito\n\ntem que programar todo dia\n\n\n\nvai ter vezes que o erro não faz sentido\nvai ter vezes que as tuas costas vão doer\nvai ter vezes que os teus olhos vão ficar vermelhos e vão sair lágrimas dos teus olhos\n\no teste não passa\no código não compila\nmas você vai seguir tentando\nvai seguir debugando\nvai olhar o stack trace\nvai olhar o core dump\nvai usar gdb\nvai usar valgrind\nvai colocar trace no console de passou aqui\n\ntem que programar todo dia\n\nvai ter um dia que vai compilar de primeira\nque você vai saber todos os padrões de projeto\nvai chegar o dia em que você vai entender monadas\n\ntem que programar todo dia\n\nMusic by Ross Bugden\nhttps://www.youtube.com/channel/UCQKGLOK2FqmVgVwYferltKQ\n\nClips by http://www.natureclip.co.nr/\nhttp://www.natureclip.co.nr/"
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/y04PH60_Owg/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/y04PH60_Owg/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/y04PH60_Owg/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/y04PH60_Owg/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 0
+    resourceId:
+        kind: 'youtube#video'
+        videoId: y04PH60_Owg
+-
+    publishedAt: '2017-11-23T01:16:54.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Como ganhar na Mega-Sena de 50 milhões usando ShellScript'
+    description: 'Esse método é tão bom quanto qualquer outro que você vá ver por aí'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/yA6FuBlEfY4/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/yA6FuBlEfY4/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/yA6FuBlEfY4/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/yA6FuBlEfY4/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 1
+    resourceId:
+        kind: 'youtube#video'
+        videoId: yA6FuBlEfY4
+-
+    publishedAt: '2017-11-20T02:32:11.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Reverter as palavras - Pergunta de Entrevista'
+    description: "Mais uma pergunta de entrevista: você precisa inverter as PALAVRAS de uma string (não as letras).\n\nVeja essa e mais perguntas em: https://www.interviewcake.com/question/python/reverse-words"
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/vQb1L3jtftI/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/vQb1L3jtftI/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/vQb1L3jtftI/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/vQb1L3jtftI/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 2
+    resourceId:
+        kind: 'youtube#video'
+        videoId: vQb1L3jtftI
+-
+    publishedAt: '2017-11-17T01:37:07.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Haskell Para Crianças'
+    description: 'Olá amiguinho. Hoje vamos ver como é simples programar em Haskell você também pode. Esse vídeo é só para os baixinhos.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/TNLgke8RABM/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/TNLgke8RABM/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/TNLgke8RABM/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/TNLgke8RABM/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 3
+    resourceId:
+        kind: 'youtube#video'
+        videoId: TNLgke8RABM
+-
+    publishedAt: '2017-11-16T01:02:55.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Como a Análise de Algoritmos vai te fazer um programador melhor - parte 4/4'
+    description: 'Que problemas são esses que são tão difíceis de resolver? vamos ver como provar para o seu chefe que certos problemas não adianta fazer hora extra para resolver de maneira eficiente.'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/j6SQAtSQP6c/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/j6SQAtSQP6c/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/j6SQAtSQP6c/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/j6SQAtSQP6c/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 4
+    resourceId:
+        kind: 'youtube#video'
+        videoId: j6SQAtSQP6c
+-
+    publishedAt: '2017-11-08T01:49:53.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Como a Análise de Algoritmos vai te fazer um programador melhor - parte 3/4'
+    description: 'Na terceira parte vemos como melhorar seus programas em UM TRILHÃO de operações!'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/DOSK2OddQNg/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/DOSK2OddQNg/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/DOSK2OddQNg/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/DOSK2OddQNg/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 5
+    resourceId:
+        kind: 'youtube#video'
+        videoId: DOSK2OddQNg
+-
+    publishedAt: '2017-10-23T00:05:53.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Como a Análise de Algoritmos vai te fazer um programador melhor - parte 2/4'
+    description: 'Nessa segunda parte vemos como transformamos uma fórmula piradona em uma função de complexidade'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/jh362DFVvk4/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/jh362DFVvk4/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/jh362DFVvk4/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/jh362DFVvk4/sddefault.jpg'
+            width: 640
+            height: 480
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 6
+    resourceId:
+        kind: 'youtube#video'
+        videoId: jh362DFVvk4
+-
+    publishedAt: '2017-10-14T22:27:34.000Z'
+    channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
+    title: 'Polêmica do peladão + 50 Inscritos no canal!'
+    description: 'Nesse vídeo discuto o que suas crianças estão aprendendo por aí e também agradeço os inscritos do canal, obrigado gente!'
+    thumbnails:
+        default:
+            url: 'https://i.ytimg.com/vi/OHf0by6XUeM/default.jpg'
+            width: 120
+            height: 90
+        medium:
+            url: 'https://i.ytimg.com/vi/OHf0by6XUeM/mqdefault.jpg'
+            width: 320
+            height: 180
+        high:
+            url: 'https://i.ytimg.com/vi/OHf0by6XUeM/hqdefault.jpg'
+            width: 480
+            height: 360
+        standard:
+            url: 'https://i.ytimg.com/vi/OHf0by6XUeM/sddefault.jpg'
+            width: 640
+            height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/OHf0by6XUeM/maxresdefault.jpg'
+            width: 1280
+            height: 720
+    channelTitle: 'Code Shot'
+    playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
+    position: 7
+    resourceId:
+        kind: 'youtube#video'
+        videoId: OHf0by6XUeM
+-
     publishedAt: '2017-02-04T16:05:45.000Z'
     channelId: UCs6Bu78-4JlWUfNX-J7AnSQ
     title: 'Como a Análise de Algoritmos vai te fazer um programador melhor - parte 1/4'
@@ -18,7 +246,7 @@
             height: 360
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 0
+    position: 8
     resourceId:
         kind: 'youtube#video'
         videoId: s1uJmJFJpBA
@@ -42,7 +270,7 @@
             height: 360
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 1
+    position: 9
     resourceId:
         kind: 'youtube#video'
         videoId: yZ4TBhkCps0
@@ -66,7 +294,7 @@
             height: 360
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 2
+    position: 10
     resourceId:
         kind: 'youtube#video'
         videoId: m-mRbUGL-cg
@@ -90,7 +318,7 @@
             height: 360
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 3
+    position: 11
     resourceId:
         kind: 'youtube#video'
         videoId: IqVuzEvvQQg
@@ -114,7 +342,7 @@
             height: 360
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 4
+    position: 12
     resourceId:
         kind: 'youtube#video'
         videoId: fx1la1uPvrQ
@@ -142,7 +370,7 @@
             height: 480
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 5
+    position: 13
     resourceId:
         kind: 'youtube#video'
         videoId: v12HMQnI-cU
@@ -168,9 +396,13 @@
             url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/sddefault.jpg'
             width: 640
             height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/K2M_O3z6DGM/maxresdefault.jpg'
+            width: 1280
+            height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 6
+    position: 14
     resourceId:
         kind: 'youtube#video'
         videoId: K2M_O3z6DGM
@@ -196,9 +428,13 @@
             url: 'https://i.ytimg.com/vi/E0RnaIIPamw/sddefault.jpg'
             width: 640
             height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/E0RnaIIPamw/maxresdefault.jpg'
+            width: 1280
+            height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 7
+    position: 15
     resourceId:
         kind: 'youtube#video'
         videoId: E0RnaIIPamw
@@ -230,7 +466,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 8
+    position: 16
     resourceId:
         kind: 'youtube#video'
         videoId: 3krDd98tJgo
@@ -256,9 +492,13 @@
             url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/sddefault.jpg'
             width: 640
             height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/aMLLdaHAzJk/maxresdefault.jpg'
+            width: 1280
+            height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 9
+    position: 17
     resourceId:
         kind: 'youtube#video'
         videoId: aMLLdaHAzJk
@@ -284,9 +524,13 @@
             url: 'https://i.ytimg.com/vi/U28jaDqtkKo/sddefault.jpg'
             width: 640
             height: 480
+        maxres:
+            url: 'https://i.ytimg.com/vi/U28jaDqtkKo/maxresdefault.jpg'
+            width: 1280
+            height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 10
+    position: 18
     resourceId:
         kind: 'youtube#video'
         videoId: U28jaDqtkKo
@@ -318,7 +562,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 11
+    position: 19
     resourceId:
         kind: 'youtube#video'
         videoId: MO4Lbr44Q_Y
@@ -350,7 +594,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 12
+    position: 20
     resourceId:
         kind: 'youtube#video'
         videoId: nFKfli8oGFs
@@ -382,7 +626,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 13
+    position: 21
     resourceId:
         kind: 'youtube#video'
         videoId: n8ruk69Dsdg
@@ -414,7 +658,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 14
+    position: 22
     resourceId:
         kind: 'youtube#video'
         videoId: ltKrUlCho0A
@@ -446,7 +690,7 @@
             height: 720
     channelTitle: 'Code Shot'
     playlistId: UUs6Bu78-4JlWUfNX-J7AnSQ
-    position: 15
+    position: 23
     resourceId:
         kind: 'youtube#video'
         videoId: v3dowexhQLA

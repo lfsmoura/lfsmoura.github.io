@@ -1,16 +1,26 @@
+- title: Javascript Adventure
+  desc: "Livro que estou escrevendo para ensinar programação Web para a criançada"
+  url: "/jsadventure"
+  lastupdate: 2017
+
+- title: Cat Clicker Revolution
+  desc: "Junte gatos e mais gatos, colete amor"
+  url: "https://catclickerrevolution.herokuapp.com/"
+  lastupdate: 2017
+
 - title: cachemock
   desc: "Biblioteca que guarda chamadas assíncronas para criar mocks automaticos"
   url: "/2017/03/04/automatic-mock-library.html"
   lastupdate: 2017
 
+- title: Gerador de cruzadinhas
+  desc: "Gerador de cruzadinhas usando Angular e sails.js"
+  url: "https://nicecross.herokuapp.com/"
+  lastupdate: 2017
+
 - title: global-state
   desc: "Biblioteca baseada em redux e socket.io para sincronizar clientes através da Web"
   url: "/javascript/bibliotecas/2016/06/02/global-state-redux.html"
-  lastupdate: 2016
-
-- title: Gerador de cruzadinhas
-  desc: "Gerador de cruzadinhas usando Angular e sails.js"
-  url: "http://nicecross.herokuapp.com/"
   lastupdate: 2016
 
 - title: Chat Super Cool

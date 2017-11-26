@@ -1,9 +1,10 @@
 jekyll:
-  build: .
+  image: "jekyll/jekyll"
   command: jekyll s --host 0.0.0.0 --force_polling
   volumes:
-    - ./.:/src
+      - $PWD:/srv/jekyll
+      - $PWD/vendor/bundle:/usr/local/bundle
   ports:
-    - "localhost:4000:4000"
+    - "4000:4000"
   expose:
     - "4000"
