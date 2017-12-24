@@ -47,6 +47,11 @@ Percorrer dicionário:
 for key, value in d.items(): print(key, value)
 ```
 
+Pegar o máximo de uma lista de acordo com uma função:
+``` python
+max(arr, key=f)
+```
+
 ## Strings
 
 ```python
@@ -88,3 +93,12 @@ from functools import reduce
 reduce(lambda s, x: s + x], [1,2,3], 0) == 6
 ```
 
+## itertools
+O módulo `itertools` é muito útil. Aqui algumas funções úteis:
+
+```python
+import itertools
+
+list(itertools.combinations([1,2,3], 2)) # [(1, 2), (1, 3), (2, 3)]
+list(itertools.permutations([1,2,3], 2)) # [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+```
