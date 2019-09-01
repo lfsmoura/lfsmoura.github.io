@@ -6,30 +6,31 @@ layout: default
   <div class="col-md-8">
     <h2>Bio</h2>
     <p class="lead">
-      Eu nasci em Porto Alegre, Brasil. Eu sou bacharel e mestre em Ciência da Computação pela <abbr title="Universidade Federal do Rio Grande do Sul">UFRGS</abbr> (Porto Alegre, Brasil) e Engenheiro de Sistemas de Informática pela <abbr title="École nationale supérieure d'informatique et de mathématiques appliquées de Grenoble">Ensimag</abbr> (Grenoble, França).
-      Atualmente sou engenheiro de software na <a href="http://sap.com">SAP</a>.
-    </p>
-
-    <p>
       I was born in Porto Alegre, Brazil. I have a bachelor's and a Master's degree in Computer Science from <abbr title="Universidade Federal do Rio Grande do Sul">UFRGS</abbr> (Porto Alegre, Brazil) and in Systems Engineering from <abbr title="École nationale supérieure d'informatique et de mathématiques appliquées de Grenoble">Ensimag</abbr> (Grenoble, France).
+
+      I'm currently a software engineer at <a href="https://microsoft.com">Microsoft</a>.
     </p>
   </div>
   <div class="col-md-4">
     <figure>
-    <img class="img-responsive img-rounded center-block" src="{{site_url}}/assets/leo4.jpeg" alt="Foto de Leonardo">
+    <img class="img-responsive img-rounded center-block" src="{{site_url}}/assets/leo5.jpeg" alt="Foto de Leonardo">
     </figure>
   </div>
 </div>
 
-  <h2>Últimos artigos do blog</h2>
+  <h2>Latest Posts</h2>
 
   <table class="table table-striped">
     <tbody>
-    {% for post in site.posts %}
+    {% for post in site.posts limit:5 %}
       <tr>
         <td>{{ post.date | date: "%b %-d, %Y" }}</td>
         <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
       </tr>
     {% endfor %}
+      <tr>
+        <td></td>
+        <td><a href="/blog">Read older posts &rarr;</a></td>
+      </tr>
     </tbody>
   </table>
