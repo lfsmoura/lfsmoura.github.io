@@ -3,8 +3,6 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
@@ -21,40 +19,12 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
         "syntax-highlighting"
 ;
-
-.post-content img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  }
 
 /* credit: http://codepen.io/rvinay88/pen/Hweau */
 hr.soften {
@@ -66,9 +36,6 @@ hr.soften {
   border: 0;
 }
 
-.post {
-  margin-bottom: 100px;
-}
 
 .mc-field-group {
   float: left;
@@ -81,21 +48,6 @@ hr.soften {
 
 #mc-embedded-subscribe {
   background-color: #333;
-}
-
-.site-footer {
-  border: 0;
-  color: #f4f4f4;
-  background-color: #333;
-  width: 100%;
-}
-
-.site-footer a {
-  color: #6bace4;
-}
-
-.site-footer a:hover {
-  color: #92ccff;
 }
 
 #mc_embed_signup {

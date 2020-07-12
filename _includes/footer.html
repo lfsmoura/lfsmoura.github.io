@@ -1,34 +1,35 @@
-<footer class="site-footer container">
-
-  <div class="col-md-8">
-    <p class="small">
-      The contents of this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-    </p>
-    <p class="small">
-      This site is powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    
+    <ul class="list-inline">
+      <li class= "list-inline-item">
+        {% include linkedin.html %}
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.youtube.com/channel/UCs6Bu78-4JlWUfNX-J7AnSQ/">Youtube</a>
+      </li>
+      <li class="list-inline-item">
+        {% include github.html %}
+      </li>
+      <li class="list-inline-item">
+        {% include twitter.html %}
+      </li>
+      <li class="list-inline-item">
+        <a href="http://lattes.cnpq.br/3495887322246706">Lattes</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.npmjs.com/~lfsmoura">npm</a>
+      </li>
+    </ul>
+    <hr />
+    <p class="text-center">
+      <small>The contents of this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small>
+      <small>Disclaimer: All views expressed on this site are my own and do not represent the opinions of any entity whatsoever with which I have been, am now, or will be affiliated.</small>
+      <small>This site is powered by <a href="http://jekyllrb.com/">Jekyll</a>.</small>
     </p>
   </div>
-  <div class="col-md-4 text-right">
-      <p> You can find me on: </p>
-      <ul class="list-inline">
-        <li><a href="http://www.linkedin.com/in/leonardomoura">LinkedIn</a>
-        <li>
-          {% include github.html %}
-        </li>
-        <li>
-          {% include twitter.html %}
-        </li>
-        <li>
-          <a href="http://lattes.cnpq.br/3495887322246706">Lattes</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/~lfsmoura">npm</a>
-        </li>
-      </ul>
-    </div>
 </footer>
 
-<!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -38,8 +39,3 @@
   ga('create', 'UA-42644324-1', 'auto');
   ga('send', 'pageview');
 </script>
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script><!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>

@@ -8,27 +8,29 @@ full_posts: 3
 {% for post in site.posts %}
   {% if forloop.index < page.full_posts %}
   <div class='post'>
-    <h1><a class="post-title" href='{{post.url}}'>{{post.title}}</a></h1>
-    <span class='page-meta'>{{post.date | date_to_string}}</span>
+    <h2><a class="post-title" href='{{post.url}}'>{{post.title}}</a></h2>
+    <span class='post-meta'>{{post.date | date_to_string}}</span>
+
     <div class='post-content'>{{post.content}}</div>
-    <!-- <a href='{{post.url}}#disqus_thread'>View Comments</a> -->
-  <hr class="soften">
+      <!-- <a href='{{post.url}}#disqus_thread'>View Comments</a> -->
+    <hr class="soften">
   </div>
   {% else %}
     {% if forloop.index == page.full_posts %}
     <h2>Arquivo do blog</h2>
-    <table class="table table-striped">
-      <tbody>
+    <div class="container">
+      <div class="list-group">
     {% endif %}
-      <tr>
-        <td>{{ post.date | date: "%b %-d, %Y" }}</td>
-        <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
-        <!-- <td><a href='{{post.url}}#disqus_thread'>Comments</a></td> -->
-      </tr>
+    <a class="list-group-item list-group-item-action" href="{{ post.url | prepend: site.baseurl }}">
+      <div class="d-flex w-100 justify-content-between">
+        {{ post.title }}
+        <small class="d-none d-sm-block">{{ post.date | date: "%b %-d, %Y" }}</small>
+      </div>
+    </a>
   {% endif %}
 {% endfor %}
 
 {% if site.posts.size > page.full_posts %}
-      </tbody>
-    </table>
+    </div>
+  </div>
 {% endif %}
