@@ -8,11 +8,18 @@ url: "http://leomoura.org" # the base hostname & protocol for your site
 twitter_username: lfsmoura
 github_username:  lfsmoura
 future: true
+plugins:
+  - jekyll-sitemap
 
 # Build settings
 encoding: utf-8
 highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'syntax'
 
 sitemap:
   file: "/sitemap.xml"
@@ -28,6 +35,5 @@ sitemap:
 #menu
 pages_list:
   Blog: '/blog/'
-#  Sobre: '/about/'
   Stuff: '/stuff/'
   Videos: '/videos/'

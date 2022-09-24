@@ -6,11 +6,11 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.0",
-    "yamljs": "^0.2.8"
+    "yamljs": "^0.3.0"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "bash build.sh",
+    "serve": "bundle exec jekyll serve -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

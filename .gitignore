@@ -7,3 +7,6 @@ _site
 *˜
 .DS_Store
 node_modules
+
+.jekyll-cache/
+.ruby-version
