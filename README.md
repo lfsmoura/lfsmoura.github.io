@@ -8,8 +8,7 @@ O site é gerado com jekyll, para servir localmente:
   jekyll s
 ```
 
-Para gerar a atualização dos vídeos:
+to check theme
 ```
-  export YOUTUBE_KEY={your_key}
-  node updateVideos.js
+  open $(bundle info --path minima)
 ```

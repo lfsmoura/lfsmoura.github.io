@@ -1,18 +1,12 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Language" content="en-us">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  {% if jekyll.environment == "production" %}
-    <script data-ad-client="ca-pub-6050380684291575" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  {% endif %}
-</head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+  </head>

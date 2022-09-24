@@ -1,12 +1,12 @@
-*.local
 _site
 .sass-cache
-.idea/
+.jekyll-cache
+.jekyll-metadata
+vendor
 
 *.bak
 *˜
 .DS_Store
 node_modules
 
-.jekyll-cache/
-.ruby-version
+.jekyll-cache
