@@ -4,7 +4,7 @@ title: "Introducing BlockSlots"
 tag:
 ---
 
-It has been a year since I started my crypto journey.I've wanted to build a full dAPP to practice my skills since then. I've wanted to make something cool but with a limited scope that would allow me to ship a working product. Since crypto is ripe with gamblers I've decided to create a fully decentralized slot machine.
+It has been a year since I started my crypto journey. I've wanted to build a full dAPP to practice my skills since then. I've wanted to make something cool but with a limited scope that would allow me to ship a working product. Since crypto is ripe with gamblers I've decided to create a fully decentralized slot machine.
 
 I am excited to announce the launch of [BlockSlots](https://blockslots.xyz/) - a decentralized application (dAPP) on the Polygon network that lets users bet tokens and win big with an exciting slot machine!
 
