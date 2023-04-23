@@ -1,8 +1,7 @@
 ---
 layout: home
+title: "Bio"
 ---
-
-# For those wondering
 
 ## Who's Leonardo Moura?
 
