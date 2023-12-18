@@ -19,4 +19,4 @@ I engage in at least one physical activity every day. I swim, go to the gym, and
 
 ### Reading
 
-I am currently reading "A Philosophy of Software Design" by John Ousterhout, and "Hooking Up" by Tom Wolfe.
+I am currently reading "The Pathless Path" by Paul Millerd, and "Hooking Up" by Tom Wolfe.
