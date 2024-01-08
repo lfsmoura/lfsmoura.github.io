@@ -5,7 +5,9 @@ title: Get some time with me
 
 ## My Calendar is open for you
 
-Are you a LATAM developer trying to get into crypto? Or perhaps a founder that want to start a company in crypto and want to know what are your options for raising capital? Schedule a time with me and I can help you get started!
+Are you a LATAM developer aspiring to get into the crypto industry? Or perhaps you are a founder looking to start a company in crypto or curious about your options for raising capital? Schedule some time with me and I can help you get started!
+
+I have 10+ years of experience in Software (2 of those in crypto). I have several acquaintances I helped get into international jobs and I'm mentoring a couple people to get into crypto (one of them with zero experience in the software industry).
 
 <!-- Calendly link widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -15,7 +17,7 @@ Are you a LATAM developer trying to get into crypto? Or perhaps a founder that w
 
 ## Why I am giving away free consultations?
 
-I want to give back and help my fellow LATAM developers to get into crypto. The more people building, the better. By offering free consultations, I aim to empower more developers and entrepreneurs like you to innovate and succeed in the crypto space.
+I'm not selling you anything. I want to learn some skills and help my community, effectively killing two birds with one stone. Although that endeavor might result in a business someday, right now, I just want to talk to people and learn about hiring and recruiting.
 
 ## What to Expect in Your Consultation
 
