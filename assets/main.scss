@@ -3,3 +3,28 @@
 ---
 
 @import "minima";
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-image-container {
+  flex: 1;
+}
+
+.home-content-container {
+  flex: 3;
+}
+
+/* Responsive layout for screens smaller than 768px */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .home-image-container,
+  .home-content-container {
+    flex: none; /* Reset flex settings to use default block layout */
+  }
+}
