@@ -1,10 +1,11 @@
 name: Sync Notion
 run-name: ${{ github.actor }} is syncing Notion
 on:
+  push:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
 jobs:
-  Explore-GitHub-Actions:
+  Sync-Notion:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -26,21 +27,24 @@ jobs:
           ls ${{ github.workspace }}/notes
 
       - name: Check for changes
-        id: changes
+        id: check_changes
         run: |
-          git diff --quiet || echo "::set-output name=changes::true"
-          git diff --cached --quiet || echo "::set-output name=changes::true"
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No changes detected."
+          else
+            echo "changes=true" >> $GITHUB_ENV
+          fi
         shell: bash
 
       - name: Commit files
-        if: steps.changes.outputs.changes == 'true'
+        if: env.changes == 'true'
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -a -m "Sync Notes"
 
       - name: Push changes
-        if: steps.changes.outputs.changes == 'true'
+        if: env.changes == 'true'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
