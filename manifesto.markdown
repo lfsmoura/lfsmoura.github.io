@@ -2,6 +2,7 @@
 layout: page
 title: Decentralization Manifesto
 permalink: /manifesto
+published: false
 ---
 
 ## Why Decentralization is the Only Salvation from Authoritarianism

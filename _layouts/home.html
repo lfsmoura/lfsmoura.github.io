@@ -7,7 +7,13 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {{ content }}
+  <div style="display: flex; flex-direction: row">
+    <div style="display: flex; flex: 1"><img src="/assets/lpleo.png" alt="a well-funded fellow">
+    </div>
+    <div style="display: flex; flex: 3">
+      {{ content }}
+    </div>
+    </div>
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
