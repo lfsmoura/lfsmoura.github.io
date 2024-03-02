@@ -25,13 +25,22 @@ jobs:
         run: |
           ls ${{ github.workspace }}/notes
 
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "::set-output name=changes::true"
+          git diff --cached --quiet || echo "::set-output name=changes::true"
+        shell: bash
+
       - name: Commit files
+        if: steps.changes.outputs.changes == 'true'
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -a -m "Add changes"
+          git commit -a -m "Sync Notes"
 
       - name: Push changes
+        if: steps.changes.outputs.changes == 'true'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
