@@ -40,7 +40,6 @@ const syncNotes = async () => {
   });
   if (result.object === "list") {
     for (let page of result.results) {
-      console.log(page);
       await syncNote({
         id: page.id,
         title: page.properties.Name.title[0].text.content,

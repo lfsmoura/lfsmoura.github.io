@@ -4,5 +4,8 @@
     "dotenv": "^16.4.5",
     "notion-to-md": "^3.1.1",
     "yaml": "^2.4.0"
+  },
+  "scripts": {
+    "notion-sync": "node _integrations/notion.js"
   }
 }
