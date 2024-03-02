@@ -26,6 +26,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}/notes
 
+      - name: Add changes
+        run: |
+          git add notes/
+
       - name: Check for changes
         id: check_changes
         run: |
