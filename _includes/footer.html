@@ -1,33 +1,10 @@
-<footer class="site-footer h-card">
+<footer class="vertical-container py-10">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-        <p>Opinions are my own and not necessarily the views of my employer.</p>
-      </div>
-    </div>
-
-  </div>
-
+  <p>@lfsmoura - Opinions are my own and not necessarily the views of my employer.</p>
+  <ul class="inline-flex">
+    {% for profile in site.data.social-profiles %}
+    <li class="p-2 first:pl-0"><a href="{{profile.url}}">{{ profile.name }}</a></li>
+    {% endfor %}
+  </ul>
 </footer>

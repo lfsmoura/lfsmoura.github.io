@@ -1,0 +1,42 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Menu */
+#nav-trigger:checked ~ #menu {
+  display: block;
+}
+
+.vertical-container {
+  @apply container mx-auto max-w-6xl px-3 lg:px-36;
+}
+
+a {
+  @apply italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold my-2;
+}
+
+h1,
+h2 {
+  @apply mb-2 mt-4;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}

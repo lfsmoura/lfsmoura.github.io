@@ -4,16 +4,16 @@ title: Notes
 ---
 
 <section>
-  <ul class="post-list">
+  <ul>
     {%- assign paths = site.pages | where:"layout","note" -%} {%- for post in
     paths -%}
-    <li>
+    <li class="flex flex-row justify-between my-2 border-b-2 py-2">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
       <a class="post-link" href="{{ post.url | relative_url }}">
         {{ post.title | escape }}
       </a>
+      <span class="text-gray-400">{{ post.date | date: date_format }}</span>
       {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
     </li>
     {%- endfor -%}

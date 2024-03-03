@@ -29,9 +29,13 @@ google_analytics: UA-42644324-1
 linkedin_username: leonardomoura
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-postcss
+
+postcss:
+  cache: false
 
 # Exclude from processing.
 # The following items will not be processed, by default.
