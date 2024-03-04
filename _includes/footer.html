@@ -1,10 +1,15 @@
-<footer class="vertical-container py-10">
+<footer class="vertical-container my-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-  <p>@lfsmoura - Opinions are my own and not necessarily the views of my employer.</p>
+  
   <ul class="inline-flex">
     {% for profile in site.data.social-profiles %}
-    <li class="p-2 first:pl-0"><a href="{{profile.url}}">{{ profile.name }}</a></li>
+    <li class="px-2 first:pl-0"><a href="{{profile.url}}">{{ profile.name }}</a></li>
     {% endfor %}
   </ul>
+  <p role="presentation" class="hidden lg:flex">&bull;</p>
+  <div class="flex flex-col items-center justify-items-center text-xs lg:text-sm text-gray-500 text-center lg:text-right">
+    <p>CC BY-NC-SA 4.0</p>
+    <p class="w-full">Opinions are my own and not necessarily the views of my employer.</p>
+  </div>
 </footer>

@@ -7,6 +7,21 @@ The Game of Life, or just 'Life' for short, was created by John Conway, a Britis
 
 Here's what it looks like:
 
+<style type="text/css">
+  .matrix-viz {
+    display: flex;
+    justify-content: center;
+    
+  }
+  table {
+    margin: 8px 0;
+  }
+  td {
+    border: 1px solid black; text-align: center; padding: 5px;
+    width: 36px;
+  }
+</style>
+
 <div style="display: flex; justify-content: center">
 <table style='border-collapse: collapse; border: 1px solid black; max-width: 300px'>
   <tr>
@@ -115,87 +130,87 @@ This idea excited me a lot. Could we start a new trend: extending the notion of 
 
 To reduce the scope of the project, we are only dealing with finite seeds. A seed could be represented as an `N x N` matrix, where `N` is the number of columns. Each cell has a `1` for a live cell and a `0` for a dead cell. Here's an example seed:
 
-<div style="display: flex; justify-content: center">
+<div class="matrix-viz">
 <table style='border-collapse: collapse; border: 1px solid black; max-width: 300px'>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
     <td style='border: 1px solid black; text-align: center; padding: 5px; background-color: #eef'>1</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
     <td style='border: 1px solid black; text-align: center; padding: 5px; background-color: #eef'>1</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
     <td style='border: 1px solid black; text-align: center; padding: 5px; background-color: #eef'>1</td>
     <td style='border: 1px solid black; text-align: center; padding: 5px; background-color: #eef'>1</td>
     <td style='border: 1px solid black; text-align: center; padding: 5px; background-color: #eef'>1</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
-    <td style='border: 1px solid black; text-align: center; padding: 5px;'>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
 </table>
 </div>

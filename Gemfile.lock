@@ -69,6 +69,8 @@ DEPENDENCIES
   jekyll (~> 4.2.2)
   jekyll-feed (~> 0.12)
   jekyll-postcss
+  kramdown
+  rouge
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)

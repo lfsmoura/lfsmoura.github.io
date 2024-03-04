@@ -17,7 +17,7 @@
             </span>
           </label>
           <!---->
-        <div id="menu" class="hidden lg:block absolute lg:relative top-0 right-0 bg-white lg:bg-transparent">
+        <div id="menu" class="hidden  absolute lg:relative lg:block top-10 lg:top-0 right-2 lg:right-0 bg-gray-100 lg:bg-transparent rounded-lg drop-shadow-md">
           <ul class="grid lg:inline-flex">
             {%- for path in page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
