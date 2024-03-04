@@ -2,40 +2,35 @@
 layout: default
 ---
 
-<div class="home">
+<div class="">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1>{{ page.title }}</h1>
   {%- endif -%}
 
-  <div class="home-container">
-    <div class="home-image-container">
-      <img src="/assets/lpleo.png" alt="a well-funded fellow">
+  <div class="flex lg:flex-row flex-col items-center lg:items-start">
+    <div class="lg:m-8">
+      <img src="/assets/lpleo.png" alt="a well-funded fellow" />
     </div>
-    <div class="home-content-container">
-      {{ content }}
-    </div>
+    <div class="">{{ content }}</div>
   </div>
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+  <h2>{{ page.list_title | default: "Posts" }}</h2>
+  <ul>
+    {%- for post in site.posts -%}
+    <li class="flex flex-row justify-between my-2 border-b-2 py-2">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+      -%}
 
-    <p style="text-align: right;" class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+      <a class="" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+      <span class="text-gray-400">{{ post.date | date: date_format }}</span>
+      {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  <!-- <p style="text-align: right;" class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   {%- endif -%}
-
 </div>

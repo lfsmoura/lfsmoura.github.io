@@ -3,14 +3,12 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body class="flex flex-col min-h-screen">
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <main class="vertical-container flex flex-grow" aria-label="Content">
         {{ content }}
-      </div>
     </main>
 
     {%- include footer.html -%}

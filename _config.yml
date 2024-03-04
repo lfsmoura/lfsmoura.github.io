@@ -29,9 +29,18 @@ google_analytics: UA-42644324-1
 linkedin_username: leonardomoura
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-postcss
+
+postcss:
+  cache: false
+
+highlighter: rouge
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.

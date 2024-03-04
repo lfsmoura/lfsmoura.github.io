@@ -9,6 +9,8 @@ Are you a LATAM developer aspiring to get into the crypto industry? Or perhaps y
 
 I have 10+ years of experience in Software (2 of those in crypto). I have several acquaintances I helped get into international jobs and I'm mentoring a couple people to get into crypto (one of them with zero experience in the software industry).
 
+&nbsp;
+
 <!-- Calendly link widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
