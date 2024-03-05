@@ -3,6 +3,7 @@ const { NotionToMarkdown } = require("notion-to-md");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const YAML = require("yaml");
+const kebabCase = require("just-kebab-case");
 
 dotenv.config();
 
@@ -13,12 +14,13 @@ const notion = new Client({
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
-const syncNote = async ({ id, title, date }) => {
+const syncNote = async ({ id, title, date, link }) => {
   const mdblocks = await n2m.pageToMarkdown(id);
   const frontMatter = {
     title,
     date,
     layout: "note",
+    permalink: link || `/notes/${kebabCase(title)}`,
   };
   fs.writeFileSync(
     `notes/${id}.md`,
@@ -44,6 +46,7 @@ const syncNotes = async () => {
         id: page.id,
         title: page.properties.Name.title[0].text.content,
         date: page.created_time,
+        link: page.properties.Link.url,
       });
     }
   }

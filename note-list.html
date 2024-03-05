@@ -5,8 +5,8 @@ title: Notes
 
 <section class="w-full">
   <ul>
-    {%- assign paths = site.pages | where:"layout","note" -%} {%- for post in
-    paths -%}
+    {%- assign paths = site.pages | sort: 'date' | reverse |
+    where:"layout","note" -%} {%- for post in paths -%}
     <li class="flex flex-row justify-between my-2 border-b-2 py-2">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
