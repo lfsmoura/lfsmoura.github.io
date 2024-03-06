@@ -11,6 +11,10 @@
     "yaml": "^2.4.0"
   },
   "scripts": {
-    "notion-sync": "node _integrations/notion.js"
+    "notion-sync": "node _integrations/notion.js",
+    "publish": "node _integrations/publish.js"
+  },
+  "devDependencies": {
+    "@inquirer/prompts": "^4.1.0"
   }
 }
