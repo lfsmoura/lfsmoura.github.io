@@ -21,6 +21,10 @@ a {
   @apply italic hover:underline;
 }
 
+main p {
+  @apply my-4;
+}
+
 h1,
 h2,
 h3,
