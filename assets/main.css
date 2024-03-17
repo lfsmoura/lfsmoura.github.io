@@ -25,18 +25,26 @@ main p {
   @apply my-4;
 }
 
+main ul li {
+  @apply list-disc list-outside ml-4;
+}
+
+article img {
+  @apply mx-auto my-4;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply font-bold my-2;
+  @apply font-bold my-4;
 }
 
 h1,
 h2 {
-  @apply mb-2 mt-4;
+  @apply mb-4 mt-4;
 }
 
 h1 {
@@ -44,14 +52,14 @@ h1 {
 }
 
 h2 {
-  @apply text-xl text-gray-600;
+  @apply text-xl text-gray-800;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  @apply text-gray-400;
+  @apply text-gray-600;
 }
 
 pre.highlight {
@@ -59,17 +67,6 @@ pre.highlight {
   color: #f8f8f2;
 }
 
-/* .highlight code {
-  
-} */
-
-/* .highlighter-rouge {
-  @apply w-full;
-}
-
-.highlight {
-  @apply w-full;
-} */
 /* syntax highlighting */
 
 .highlight pre {
