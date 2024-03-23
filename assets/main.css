@@ -17,7 +17,7 @@
   @apply container mx-auto max-w-6xl px-3 lg:px-36;
 }
 
-a {
+main a {
   @apply italic hover:underline;
 }
 
@@ -25,8 +25,12 @@ main p {
   @apply my-4;
 }
 
+.external-link::after {
+  content: " ↗";
+}
+
 main ul li {
-  @apply list-disc list-outside ml-4;
+  @apply list-disc list-outside lg:ml-4;
 }
 
 article img {

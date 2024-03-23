@@ -1,5 +1,9 @@
-<header class="site-header" role="banner">
-
+<header class="site-header lg:mb-6" role="banner">
+  <script>
+    function blockScroll(isChecked) {
+      document.body.style.overflow = isChecked ? 'hidden' : 'auto';
+    }
+  </script>
   <div class="vertical-container py-2 flex justify-between items-center">
     {%- assign default_paths = site.pages | where:"layout","page" |  map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
@@ -8,7 +12,7 @@
     {%- if page_paths -%}
       <nav>
         <div >
-          <input type="checkbox" id="nav-trigger" class="hidden" />
+          <input type="checkbox" id="nav-trigger" class="hidden" onchange="blockScroll(this.checked)" />
           <label for="nav-trigger" class="block lg:hidden">
             <span class="">
               <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -17,8 +21,21 @@
             </span>
           </label>
           <!---->
-        <div id="menu" class="hidden  absolute lg:relative lg:block top-10 lg:top-0 right-2 lg:right-0 bg-gray-100 lg:bg-transparent rounded-lg drop-shadow-md">
-          <ul class="grid lg:inline-flex">
+        <div id="menu" class="hidden absolute inset-0" >
+          <div class="absolute inset-0 bg-black opacity-30" onclick="document.getElementById('nav-trigger').checked = false; blockScroll(false)"></div>
+          <div class="lg:relative lg:block top-10 lg:top-0 right-2 lg:right-0 bg-gray-100 lg:bg-transparent rounded-lg drop-shadow-md">
+            <ul class="grid lg:inline-flex">
+              {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <a class="p-4 lg:px-4 lg:py-0 text-3xl" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <ul class="hidden lg:inline-flex">
             {%- for path in page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
               {%- if my_page.title -%}

@@ -18,18 +18,22 @@ layout: default
   <h2>{{ page.list_title | default: "Posts" }}</h2>
   <ul>
     {%- for post in site.posts -%}
-    <li class="flex flex-row justify-between my-2 border-b-2 py-2">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
-      -%}
+    <li class="flex flex-row justify-between border-b-2 py-2">
+      {%- assign date_format = site.minima.date_format | default: "%b, %Y" -%}
 
       <a class="" href="{{ post.url | relative_url }}">
         {{ post.title | escape }}
       </a>
-      <span class="text-gray-400">{{ post.date | date: date_format }}</span>
+      <span class="text-gray-400 min-w-28 text-right"
+        >{{ post.date | date: date_format }}</span
+      >
       {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
     </li>
     {%- endfor -%}
   </ul>
+
+  <h2 class="mt-8">Selected Projects</h2>
+  {%- include projects.html -%}
 
   <!-- <p style="text-align: right;" class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   {%- endif -%}
