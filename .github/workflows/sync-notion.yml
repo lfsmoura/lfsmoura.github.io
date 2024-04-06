@@ -6,13 +6,20 @@ on:
     - cron: "*/30 * * * *"
 jobs:
   Sync-Notion:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
 
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install -g node-gyp
+          npm install
 
       - name: Clean up notes
         run: rm -rf notes/*
