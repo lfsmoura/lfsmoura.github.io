@@ -11,7 +11,7 @@ As soon as frames were launched on Farcaster, I got interested in implementing o
 
 ![Frame running on Warpcast](/assets/projects/frame1.png)
 
-The game is pretty simpl: you choose a number. The smallest number that no one else picks is the winner and gets the prize. The prize? 0.01 ETH.
+The game is pretty simple: you choose a number. The smallest number that no one else picks is the winner and gets the prize. The prize? 0.01 ETH.
 
 The first challenge was that at the time, text input was not supported. So I implemented a terrible number selector: you start with the number 1 and you have 4 buttons (frames can have at most 4): +1, +10, +100, mint.
 
