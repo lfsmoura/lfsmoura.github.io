@@ -30,7 +30,7 @@ main p {
 }
 
 main ul li {
-  @apply list-disc list-outside lg:ml-4;
+  @apply list-disc list-outside ml-4;
 }
 
 article img {
