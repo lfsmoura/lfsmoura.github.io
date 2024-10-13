@@ -91,7 +91,7 @@ const syncNote = async ({ id, title, date, link }) => {
         }
         return {
           ...block,
-          parent: block.parent.replace(/\(.*?\)/, `(${output})`),
+          parent: block.parent.replace(/\(.*?\)/, `(/${output})`),
         };
       }
       return block;
