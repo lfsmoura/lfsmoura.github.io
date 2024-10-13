@@ -1,6 +1,7 @@
 ---
 layout: subpage
 title: "Personal Data Sovereignty: own your data, own your insights"
+permalink: /personal-data-sovereignty
 ---
 
 # Personal Data Sovereignty [Draft]
@@ -11,6 +12,7 @@ title: "Personal Data Sovereignty: own your data, own your insights"
 - [Hobbit Software](https://hachyderm.io/@danderson/112766460393943288)
 - Open source
 - This is a draft document
+- Instead of saying water is bad, build damns
 
 ## Motivation
 
@@ -30,6 +32,14 @@ But I know these platforms provide a lot of benefits. They’re convenient, effi
 
 This path isn’t easy. It takes dedication, innovation, and a collective effort to create a more secure and fair digital environment. But it’s a journey worth taking. By reclaiming control over our data, we can build a future where **individuals, not corporations, hold the power**.
 
-## Work in progress
+## Step 1: Awareness
 
-I am developing this document as part of my craft for [Kernel Block 9](https://www.kernel.community/). I'm not sure where this is going but I would appreciate your feedback.
+The first step to take control of your data is to actually understand what they are. You have identifiable facts about you
+
+Whenever you interact on the Internet you leave traces of your presence.
+
+## Step 2: Reduce your footprint
+
+In security there exists the law of the least knowledge.
+
+## Step 3: Protect
