@@ -56,7 +56,11 @@ const downloadImage = async (url, filePath) => {
 };
 // Initializing a client
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
+  auth:
+    process.env.NOTION_TOKEN ||
+    (() => {
+      throw new Error("NOTION_TOKEN is not set");
+    })(),
 });
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
@@ -94,17 +98,16 @@ const syncNote = async ({ id, title, date, link }) => {
     })
   );
   const markdown = n2m.toMarkdownString(processedBlocks).parent;
+
   fs.writeFileSync(
     `notes/${id}.md`,
-    `---\n${YAML.stringify(frontMatter)}---\n\n${
-      n2m.toMarkdownString(mdblocks).parent
-    }`
+    `---\n${YAML.stringify(frontMatter)}---\n\n${markdown}`
   );
 };
 
-const syncNotes = async () => {
+const syncNotes = async (database_id) => {
   const result = await notion.databases.query({
-    database_id: "eb052e4d211142909f0be0e8123568ed",
+    database_id: database_id,
     filter: {
       property: "Type",
       select: {
@@ -124,63 +127,6 @@ const syncNotes = async () => {
   }
 };
 
-// (async () => {
-//   const result = await notion.databases.query({
-//     database_id: "eb052e4d211142909f0be0e8123568ed",
-//     filter: {
-//       property: "Type",
-//       select: {
-//         equals: "note",
-//       },
-//     },
-//   });
-//   console.log(JSON.stringify(result, null, 2));
-//   if (result.object === "list") {
-//     const output = result.results.map((page) => ({
-//       title: page.properties.Name.title[0].text.content,
-//     }));
-//     console.log();
-//     fs.writeFileSync("_data/notes.yml", YAML.stringify(output));
-//   }
-// })();
-//https://www.notion.so/eb052e4d211142909f0be0e8123568ed?v=&pvs=4
-//https://www.notion.so/eb052e4d211142909f0be0e8123568ed?v=3ddf23b952b64138b40bc22bbcf64d6f&pvs=4
-
-//84aae4f0-a131-4dec-9a7f-349e5e1da675
-
-// (async () => {
-//   //   const result = await notion.pages.retrieve({
-//   //     page_id: "84aae4f0-a131-4dec-9a7f-349e5e1da675",
-//   //   });
-//   //   const blocks = await collectPaginatedAPI(notion.blocks.children.list, {
-//   //     block_id: "84aae4f0-a131-4dec-9a7f-349e5e1da675",
-//   //   });
-//   //   console.log(JSON.stringify(blocks, null, 2));
-//   const mdblocks = await n2m.pageToMarkdown(
-//     "84aae4f0-a131-4dec-9a7f-349e5e1da675"
-//   );
-//   console.log(n2m.toMarkdownString(mdblocks));
-//   const frontMatter = {
-//     title: "Test",
-//     date: "2021-09-10",
-//     layout: "note",
-//   };
-//   fs.writeFileSync(
-//     "notes/test3.md",
-//     `---\n${YAML.stringify(frontMatter)}---\n\n${
-//       n2m.toMarkdownString(mdblocks).parent
-//     }`
-//   );
-
-//   //   if (result.object === "list") {
-//   //     const output = result.results.map((page) => ({
-//   //       title: page.properties.Name.title[0].text.content,
-//   //     }));
-//   //     console.log();
-//   //     fs.writeFileSync("_data/notes.yml", YAML.stringify(output));
-//   //   }
-// })();
-
 (async () => {
-  await syncNotes();
+  await syncNotes("eb052e4d211142909f0be0e8123568ed");
 })();
