@@ -1,0 +1,15 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+*.bak
+*˜
+.DS_Store
+node_modules
+
+.jekyll-cache
+
+.env
+_drafts

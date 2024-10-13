@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/lfsmoura
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://leomoura.org
+  * I am lfsmoura (https://keybase.io/lfsmoura) on keybase.
+  * I have a public key with fingerprint 07D9 00F9 4D57 B760 123B  11B6 D41E 4ACD C336 D4BC
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120307524accfac372d273deef19c384f1a792ff2acc98fd0cdd56c12da0a1eccd30a",
+      "fingerprint": "07d900f94d57b760123b11b6d41e4acdc336d4bc",
+      "host": "keybase.io",
+      "key_id": "d41e4acdc336d4bc",
+      "kid": "01019e4bdd41046b4d1b88e81cf979010e6e50adfd02fb79464920d6205a073aa3270a",
+      "uid": "5083ff659d5ced51f24b07171f48bb00",
+      "username": "lfsmoura"
+    },
+    "service": {
+      "hostname": "leomoura.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1679261325,
+  "expire_in": 157680000,
+  "prev": "99e2b41d842daf8a351e2f68f8502c91558a80655ec5820c3969276a4cc14e0b",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNuAnicbZJ9UFRVGMYXMGRRnK10SC0nbiQy0nbu971MBpFgUuMXKS6uLffj3OW2
+y95td8EcFgtNM8lB0UmjCGUQFMgIBCkNxCVLgRFwAaHRodEGB0cnyIaJmupcJv7r
+/HPPPe/ved7nfHRGhRkiQ4LL0nsCTPBiSFfH8TyDHL3rYAEmavJOLLEAc8CZD3TK
+0OuzOVQZS8QATgASsDRBCZKkCBLJEjLBkjKECs5LJEcpuMDyhKIQqM5zigwkWaYZ
+CSdkAQg4lCSZBAKWgCmqyw49bo/q8um2rMwDoPCUTLMiy6AupIjjIiNTOESdZIkk
+0VyUkDBH8+oKFE4UvNCsamgN/dhm4v0PP5sb4DykRBkRgGJESsZFjoMcLik8y6Mq
+ZCANBBkFJhSR5SmG4gkgMwSgBcCSgkAS7EzuvBk7GnCkojA0L9MSlGlcISgRsDiL
+KxQnigDooBd6XEIuRLRT8eZqeR4BK0zA0Gq+KkH9YPWdzBJQmyHMmseOtG6P5tMk
+zYkqOT6f25uoK3073Tq6A4q2/0xsouqS0TkiRT70eFXNhSXiiJR8qu6KM+gmGJwk
+6AQMvutWPdCm6gTNMhxAQ+8D85Elz0NCpHCZo9AtKZxA0jgkFIZTOBoQEo/TNCdw
+gKFpKNEcASSSZ3iCZQRKknAKAhHTt/WOS0PeJMop2JGnV7W7BF+eB2KFlzuscwwh
+kYbwx0L1B2aINJpmn931HJPhFGtNjNvimkqDjq3tpjVnzUUxzh9Pf1by6v2vM5O2
+1u7+LrW+JfSfCGNkx42ynjnr//y0qqmNW5L15JqGyvCqy4eAZuX2f386aEy6dNM3
+FpZhnGx/P+WTq8H0moz60dIzVzI88EHopktPpSwoXulv2Nb4y92S262NXS3SvMct
+P988smXyVCAlY+ynL98gbcnj1zLea3qx1jxq2fP0gaKOxc0Pp6molsPjjcqbeNRy
+y0jl6MO0I3WP2hfdKx9Nt0RTR6eVzGO7cWzCnl27cXXOZm24pqLs5MrAxcODd8+v
+b2WmPQ2BvvNpP+w/Hn8uZjqZEhs2lZfe6l5XZI9O9ReW5H14YdWF6ti5Oya6J97q
+GwT9vekRXVPPl9V9c1agl5iG/q62ZdUHhuTX7vcr3T3J2X23f88e9m/HlyY/N3Iv
+Lq/YWndmeGlFQmPkwFf+zL/ujEQPfWEq8Bv39pfZiHM1pZNz6SuT5oWVK3q3YUG3
+9eXcLPuGdXE3FnU6Xgh9qTreLX6etGpXNJhYbLn++ollb9dWTL3yW2/bsb4DGxaG
+L1g776D3W1vu9o1JH5jKVz/T2BYwF66NLRyLOWQ8CoJXmZPLLeZUsXkF2PfrnrDm
+J8LjnzV9XNw6fqLzQbv1j5zwayWPelTH/NiBvXST0SUVzLeM+YMmPsYw0Bfhi+Cc
+VdD/0eDmO85bjvx/AVQ7v1o=
+=1m1M
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lfsmoura
+
+==================================================================

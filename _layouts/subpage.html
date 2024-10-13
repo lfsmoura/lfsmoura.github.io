@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="flex flex-col min-h-screen">
+
+    <main class="vertical-container" aria-label="Content">
+        {{ content }}
+    </main>
+    <footer class="vertical-container flex py-4 mt-10">
+      <a href="{{ site.baseurl }}/"><span class="mr-1">&larr;</span>home</a>
+    </footer>
+  </body>
+
+</html>

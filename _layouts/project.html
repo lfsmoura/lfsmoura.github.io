@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="w-full max-w-full">
+  <header class="post-header flex items-center justify-between w-full">
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <time
+      class="text-gray-500 h-full"
+      datetime="{{ page.date | date_to_xmlschema }}"
+      itemprop="datePublished"
+    >
+      [{%- assign date_format = site.minima.date_format | default: "%Y" -%} {{
+      page.date | date: date_format }}]
+    </time>
+    {%- if page.author -%}
+    <p class="mb-4">
+      •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span class="p-author h-card" itemprop="name"
+          >{{ page.author }}</span
+        ></span
+      >
+    </p>
+    {%- endif -%}
+  </header>
+
+  <div class="w-full">{{ content }}</div>
+
+  {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
+  endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
