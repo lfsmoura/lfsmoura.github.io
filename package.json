@@ -12,6 +12,7 @@
     "yaml": "^2.6.0"
   },
   "scripts": {
+    "start": "jekyll s -D -l",
     "dev": "jekyll s -D -l",
     "notion-sync": "node _integrations/notion.js",
     "farcaster": "node _integrations/farcaster.js",
