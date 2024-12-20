@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="max-w-full">
+<article class="wrapper content-start">
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">
       {{ page.title | escape }}
@@ -26,7 +26,9 @@ layout: default
     </p>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
+  {{ content }}
+
+  <!---->
 
   {%- assign discussion = site.data.farcaster-discussions | where: "url",
   page.url | first -%} {%- if discussion -%}

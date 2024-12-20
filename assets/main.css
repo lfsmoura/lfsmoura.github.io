@@ -266,3 +266,28 @@ pre.highlight {
 .highlight .gi {
   color: #a6e22e;
 } /* Generic.Inserted & Diff Inserted */
+
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(72rem, 100%)
+    1fr;
+  row-gap: 1rem;
+}
+.wrapper > * {
+  grid-column: 2;
+}
+
+.wrapper p {
+  @apply m-0;
+}
+
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+.limit-width {
+  @apply max-w-[72rem];
+}

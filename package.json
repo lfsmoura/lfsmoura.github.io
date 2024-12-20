@@ -16,9 +16,14 @@
     "dev": "jekyll s -D -l",
     "notion-sync": "node _integrations/notion.js",
     "farcaster": "node _integrations/farcaster.js",
-    "publish": "node _integrations/publish.js"
+    "publish": "node _integrations/publish.js",
+    "build": "node scripts/build.js"
   },
   "devDependencies": {
-    "@inquirer/prompts": "^4.3.3"
+    "@inquirer/prompts": "^4.3.3",
+    "cheerio": "^1.0.0-rc.12",
+    "clean-css": "^5.3.2",
+    "uglify-js": "^3.17.4",
+    "axios": "^1.7.7"
   }
 }

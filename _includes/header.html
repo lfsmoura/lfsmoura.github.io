@@ -1,10 +1,10 @@
-<header class="site-header lg:mb-6" role="banner">
+<header class="flex justify-center lg:mb-6" role="banner">
   <script>
     function blockScroll(isChecked) {
       document.body.style.overflow = isChecked ? 'hidden' : 'auto';
     }
   </script>
-  <div class="vertical-container py-2 flex justify-between items-center">
+  <div class="limit-width w-full py-2 flex justify-between items-center">
     {%- assign default_paths = site.pages | where:"layout","page" |  map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="font-bold text-2xl lg:text-4xl" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
