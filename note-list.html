@@ -8,7 +8,7 @@ title: Notes
     {%- assign paths = site.pages | sort: 'date' | reverse |
     where:"layout","note" -%} {%- for post in paths -%}
     <li
-      class="flex flex-col lg:flex-row justify-between my-2 border-b-2 py-2 gap-2"
+      class="flex flex-col lg:flex-row justify-between border-b-2 py-2 gap-2 m-0"
     >
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
