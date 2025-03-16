@@ -5,14 +5,15 @@
 
   <body class="flex flex-col min-h-screen">
 
+    <div class="flex flex-col flex-grow lg:max-w-screen-lg lg:mx-auto">
     {%- include header.html -%}
 
-    <main class="vertical-container flex flex-grow" aria-label="Content">
+    <main class="flex flex-grow px-3 lg:px-0" aria-label="Content">
         {{ content }}
     </main>
 
     {%- include footer.html -%}
-
+    </div>
   </body>
 
 </html>

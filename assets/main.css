@@ -17,8 +17,13 @@
   @apply container mx-auto max-w-6xl px-3 lg:px-36;
 }
 
+nav a,
+footer a {
+  @apply hover:underline;
+}
+
 main a {
-  @apply italic hover:underline;
+  @apply italic text-blue-800;
 }
 
 main p {
