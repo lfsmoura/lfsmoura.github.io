@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game of Life - Pixelated Face</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="image.js"></script>
+    <style>
+      .controls {
+        margin-top: 20px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      .controls button {
+        padding: 5px 10px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #debug {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #canvas-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+    <div class="controls">
+      <button onclick="resetPattern()">Reset</button>
+      <button onclick="togglePause()">Play/Pause</button>
+      <button onclick="step()">Step</button>
+    </div>
+    <div id="debug"></div>
+    <script>
+      let grid = [];
+      let nextGrid = [];
+      let originalPattern = [];
+      let isPaused = true; // Start paused
+      const CELL_SIZE = 2;
+      const GRID_SIZE = 300;
+      const BASE_FRAME_RATE = 60; // Normal frame rate for smooth animation
+      let frameCount = 0;
+      let updateInterval = 30; // Update every 30 frames (twice per second at 60fps)
+      const MIN_UPDATE_INTERVAL = 6; // Fastest update: every 6 frames (10 times per second)
+      const UPDATE_INTERVAL_DECREMENT = 1; // How much to decrease the interval
+      let isZooming = false;
+      let mouseX = 0;
+      let mouseY = 0;
+      const ZOOM_SCALE = 5; // Zoom magnification factor
+      let mainCanvas, zoomCanvas;
+      const ZOOM_AREA_SIZE = GRID_SIZE / ZOOM_SCALE; // Size of the area to zoom
+
+      async function processImage() {
+        try {
+          // Convert base64 to binary
+          const binaryString = atob(base64);
+          const bytes = new Uint8Array(binaryString.length);
+          for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+          }
+
+          const blob = new Blob([bytes], { type: "image/png" });
+          const img = await createImageBitmap(blob);
+
+          // Create offscreen canvas for image processing
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          canvas.width = GRID_SIZE;
+          canvas.height = GRID_SIZE;
+
+          // Draw and process image
+          ctx.drawImage(img, 0, 0, GRID_SIZE, GRID_SIZE);
+          const imageData = ctx.getImageData(0, 0, GRID_SIZE, GRID_SIZE);
+          const data = imageData.data;
+
+          // Convert to binary matrix
+          originalPattern = [];
+          for (let y = 0; y < GRID_SIZE; y++) {
+            const row = [];
+            for (let x = 0; x < GRID_SIZE; x++) {
+              const idx = (y * GRID_SIZE + x) * 4;
+              const r = data[idx];
+              const g = data[idx + 1];
+              const b = data[idx + 2];
+              row.push((r + g + b) / 3 < 128 ? 1 : 0);
+            }
+            originalPattern.push(row);
+          }
+
+          // Initialize game
+          initializeGame();
+        } catch (error) {
+          console.error("Error processing image:", error);
+          document.getElementById("debug").textContent =
+            "Error: " + error.message;
+        }
+      }
+
+      function initializeGame() {
+        // Initialize grids
+        grid = Array(GRID_SIZE)
+          .fill()
+          .map(() => Array(GRID_SIZE).fill(0));
+        nextGrid = Array(GRID_SIZE)
+          .fill()
+          .map(() => Array(GRID_SIZE).fill(0));
+
+        // Load initial pattern
+        loadPattern();
+      }
+
+      function setup() {
+        // Create main canvas
+        mainCanvas = createCanvas(GRID_SIZE * CELL_SIZE, GRID_SIZE * CELL_SIZE);
+        mainCanvas.parent("canvas-container");
+
+        // Create zoom canvas as a new p5.js canvas
+        zoomCanvas = new p5((p) => {
+          p.setup = function () {
+            p.createCanvas(GRID_SIZE * CELL_SIZE, GRID_SIZE * CELL_SIZE);
+          };
+
+          p.draw = function () {
+            p.background(255);
+            if (isZooming) {
+              // Calculate the area to zoom
+              let zoomCenterX = mouseX / CELL_SIZE;
+              let zoomCenterY = mouseY / CELL_SIZE;
+
+              // Calculate boundaries for the zoom area
+              let startX = Math.floor(zoomCenterX - ZOOM_AREA_SIZE / 2);
+              let startY = Math.floor(zoomCenterY - ZOOM_AREA_SIZE / 2);
+
+              // Draw zoomed cells
+              p.noStroke();
+              for (let y = 0; y < ZOOM_AREA_SIZE; y++) {
+                for (let x = 0; x < ZOOM_AREA_SIZE; x++) {
+                  let gridX = startX + x;
+                  let gridY = startY + y;
+
+                  // Check if we're within grid boundaries
+                  if (
+                    gridX >= 0 &&
+                    gridX < GRID_SIZE &&
+                    gridY >= 0 &&
+                    gridY < GRID_SIZE
+                  ) {
+                    if (grid[gridY][gridX] === 1) {
+                      p.fill(0);
+                    } else {
+                      p.fill(255);
+                    }
+                  } else {
+                    p.fill(255); // White for out of bounds
+                  }
+
+                  p.rect(
+                    x * (CELL_SIZE * ZOOM_SCALE),
+                    y * (CELL_SIZE * ZOOM_SCALE),
+                    CELL_SIZE * ZOOM_SCALE,
+                    CELL_SIZE * ZOOM_SCALE
+                  );
+                }
+              }
+            }
+          };
+        }, "canvas-container");
+
+        mainCanvas.mouseOver(() => (isZooming = true));
+        mainCanvas.mouseOut(() => (isZooming = false));
+        mainCanvas.mouseMoved(mouseMoved);
+        frameRate(BASE_FRAME_RATE); // Set to normal frame rate
+        processImage();
+      }
+
+      function loadPattern() {
+        for (let y = 0; y < GRID_SIZE; y++) {
+          for (let x = 0; x < GRID_SIZE; x++) {
+            grid[y][x] = originalPattern[y][x];
+          }
+        }
+      }
+
+      function draw() {
+        if (!originalPattern.length) return;
+
+        // Clear main canvas
+        background(255);
+
+        // Draw main view
+        drawMainView();
+
+        // Update state if not paused
+        if (!isPaused) {
+          frameCount++;
+          if (frameCount >= updateInterval) {
+            updateGrid();
+            frameCount = 0;
+
+            // Gradually speed up by decreasing the update interval
+            if (updateInterval > MIN_UPDATE_INTERVAL) {
+              updateInterval -= UPDATE_INTERVAL_DECREMENT;
+            }
+          }
+        }
+      }
+
+      function drawMainView() {
+        // Draw current state
+        for (let y = 0; y < GRID_SIZE; y++) {
+          for (let x = 0; x < GRID_SIZE; x++) {
+            if (grid[y][x] === 1) {
+              fill(0);
+              noStroke();
+              rect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            }
+          }
+        }
+
+        // Draw zoom area indicator
+        if (isZooming) {
+          noFill();
+          stroke(255, 0, 0);
+          strokeWeight(2);
+          let zoomX = mouseX - (ZOOM_AREA_SIZE * CELL_SIZE) / 2;
+          let zoomY = mouseY - (ZOOM_AREA_SIZE * CELL_SIZE) / 2;
+          rect(
+            zoomX,
+            zoomY,
+            ZOOM_AREA_SIZE * CELL_SIZE,
+            ZOOM_AREA_SIZE * CELL_SIZE
+          );
+        }
+      }
+
+      function countNeighbors(x, y) {
+        let count = 0;
+        for (let i = -1; i <= 1; i++) {
+          for (let j = -1; j <= 1; j++) {
+            if (i === 0 && j === 0) continue;
+
+            let newX = (x + i + GRID_SIZE) % GRID_SIZE;
+            let newY = (y + j + GRID_SIZE) % GRID_SIZE;
+            count += grid[newY][newX];
+          }
+        }
+        return count;
+      }
+
+      function updateGrid() {
+        for (let y = 0; y < GRID_SIZE; y++) {
+          for (let x = 0; x < GRID_SIZE; x++) {
+            const neighbors = countNeighbors(x, y);
+            if (grid[y][x] === 1) {
+              nextGrid[y][x] = neighbors === 2 || neighbors === 3 ? 1 : 0;
+            } else {
+              nextGrid[y][x] = neighbors === 3 ? 1 : 0;
+            }
+          }
+        }
+
+        // Swap grids
+        [grid, nextGrid] = [nextGrid, grid];
+      }
+
+      function resetPattern() {
+        if (originalPattern.length) {
+          loadPattern();
+          updateInterval = 30; // Reset speed when pattern resets
+          frameCount = 0;
+        }
+      }
+
+      function togglePause() {
+        isPaused = !isPaused;
+      }
+
+      function step() {
+        isPaused = true;
+        updateGrid();
+      }
+
+      function mouseMoved(event) {
+        // Get canvas position
+        const rect = mainCanvas.canvas.getBoundingClientRect();
+        // Calculate mouse position relative to canvas
+        mouseX = constrain(event.clientX - rect.left, 0, width);
+        mouseY = constrain(event.clientY - rect.top, 0, height);
+        // Prevent default behavior
+        return false;
+      }
+
+      function keyPressed() {
+        // 'p' or 'P' for play/pause
+        if (key === "p" || key === "P") {
+          togglePause();
+        }
+        // 'n' or 'N' for next step
+        if (key === "n" || key === "N") {
+          step();
+        }
+      }
+    </script>
+  </body>
+</html>
