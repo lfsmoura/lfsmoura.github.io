@@ -1,0 +1,21 @@
+<div class="publications">
+  <ul>
+    {% for publication in site.data.publications %}
+    <li>
+      <div class="publication-date" style="display: inline">
+        [{{ publication.date }}]
+      </div>
+      <div class="publication-title" style="display: inline">
+        {{ publication.title }}
+      </div>
+      <div class="publication-authors">{{ publication.authors }}</div>
+      <div class="publication-venue">{{ publication.venue }}</div>
+      <div class="publication-download">
+        {% if publication.download %}
+        <a href="{{ publication.download }}" target="_blank">PDF</a>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

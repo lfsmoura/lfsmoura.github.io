@@ -9,7 +9,7 @@ At the heart of my career is a commitment to helping users achieve their goals w
 
 I'm mainly focusing on developing governance and infrastructure for [Alliance](https://alliance.xyz/). My background includes developing the Microsoft Search home and query assist technologies, as well with developing HP's Alexa skill and IFTTT integration.
 
-If you want are interested about my career, see my [Linkedin]({{ site.data.social-profiles[3].url }})
+If you are interested in my career, check my [Linkedin]({{ site.data.social-profiles[3].url }})
 
 ## Think I'm currently interested in
 
@@ -17,9 +17,7 @@ If you want are interested about my career, see my [Linkedin]({{ site.data.socia
 - The Open Web
 - Political Systems
 - Startups
-- The Roman Empire
-- Padel
-- Drawing
+- [Drawing](https://www.behance.net/gallery/120222041/Inktober-2020)
 - [Personal Data Sovereignty](/personal-data-sovereignty)
 
 ## Cool things about me
@@ -27,4 +25,15 @@ If you want are interested about my career, see my [Linkedin]({{ site.data.socia
 - I was part of of [Kernel Block 9](https://www.kernel.community/)
 - I speak Portuguese (my native language), English, French, and a little Spanish.
 - I lived for a year and half in [Grenoble, France](https://maps.app.goo.gl/TQGknGDQbkEoVvpi7).
-- I got this [cool app](https://criadordecruzadinhas.com.br/) I created years ago that gets 50k users per year.
+- I got this [cool app](https://criadordecruzadinhas.com.br/) I created years ago that gets 50k MAU.
+
+## OSS & Projects
+
+- [TrustBonds](https://github.com/lfsmoura/trust-bonds): reputation public good. A social experiment
+- [Life Collection](https://lifecollection.org/): Game of Life homage NFT
+- [One-click-mute](https://github.com/lfsmoura/one-click-mute): Chrome extension to mute accounts on X with one click
+- [Eth Address decorator](https://github.com/lfsmoura/eth-address-to-cute): Chrome extension to turn Ethereum addresses into emojis
+
+## Publications
+
+{% include articles.html %}
