@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../layouts/NoteLayout.astro';
+
+// Find the "Now" note by its permalink
+const notes = await getCollection('notes');
+const nowNote = notes.find((n) => n.data.permalink === '/now');
+
+if (!nowNote) {
+  throw new Error('Now page not found');
+}
+
+const { Content } = await nowNote.render();
+---
+
+<NoteLayout frontmatter={nowNote.data}>
+  <Content />
+</NoteLayout>

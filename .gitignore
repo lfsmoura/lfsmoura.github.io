@@ -1,15 +1,20 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Astro
+dist/
+.astro/
 
-*.bak
-*˜
-.DS_Store
-node_modules
+# Dependencies
+node_modules/
 
-.jekyll-cache
-
+# Environment
 .env
-_drafts
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+*.bak
+*~
+
+# IDE
+.vscode/
+.idea/

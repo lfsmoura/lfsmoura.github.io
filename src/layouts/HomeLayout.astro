@@ -1,0 +1,42 @@
+---
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head title={title} />
+  <body class="flex flex-col min-h-screen">
+    <div class="flex flex-col flex-grow lg:max-w-screen-lg lg:min-w-[1024px] lg:mx-auto">
+      <Header />
+      <main class="flex flex-grow px-3 lg:px-0" aria-label="Content">
+        <div class="">
+          {title && <h1>{title}</h1>}
+          <div class="flex lg:flex-row flex-col items-center lg:items-start">
+            <div class="self-center">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  </body>
+  <style>
+    body {
+      background-image: url("/assets/bgleo.jpg");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, 0.7);
+      background-blend-mode: lighten;
+    }
+  </style>
+</html>

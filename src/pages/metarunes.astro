@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../layouts/NoteLayout.astro';
+
+// Find the metarunes note by its permalink
+const notes = await getCollection('notes');
+const note = notes.find((n) => n.data.permalink === 'metarunes');
+
+if (!note) {
+  throw new Error('Metarunes page not found');
+}
+
+const { Content } = await note.render();
+---
+
+<NoteLayout frontmatter={note.data}>
+  <Content />
+</NoteLayout>

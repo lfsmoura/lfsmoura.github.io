@@ -1,0 +1,25 @@
+---
+import publications from '../data/publications.json';
+---
+
+<div class="publications">
+  <ul>
+    {publications.map((pub) => (
+      <li>
+        <div class="publication-date" style="display: inline">
+          [{pub.date}]
+        </div>
+        <div class="publication-title" style="display: inline">
+          {pub.title}
+        </div>
+        <div class="publication-authors">{pub.authors}</div>
+        <div class="publication-venue">{pub.venue}</div>
+        {pub.download && (
+          <div class="publication-download">
+            <a href={pub.download} target="_blank">PDF</a>
+          </div>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>

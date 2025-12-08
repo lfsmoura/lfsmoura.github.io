@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../layouts/NoteLayout.astro';
+
+// Find the democratizing-frames note by its permalink
+const notes = await getCollection('notes');
+const note = notes.find((n) => n.data.permalink === '/democratizing-frames');
+
+if (!note) {
+  throw new Error('Democratizing frames page not found');
+}
+
+const { Content } = await note.render();
+---
+
+<NoteLayout frontmatter={note.data}>
+  <Content />
+</NoteLayout>

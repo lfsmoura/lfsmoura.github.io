@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const notes = await getCollection('notes');
+const sortedNotes = notes.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+function getNoteUrl(note: typeof notes[0]) {
+  if (note.data.permalink) {
+    // Handle different permalink formats
+    if (note.data.permalink.startsWith('/notes/')) {
+      return note.data.permalink;
+    } else if (note.data.permalink.startsWith('/')) {
+      return note.data.permalink;
+    } else {
+      return `/${note.data.permalink}`;
+    }
+  }
+  return `/notes/${note.slug}`;
+}
+---
+
+<PageLayout title="Notes">
+  <section class="w-full">
+    <ul>
+      {sortedNotes.map((note) => (
+        <li class="flex flex-col lg:flex-row justify-between border-b-2 py-2 gap-2 m-0">
+          <div class="flex">
+            <a class="post-link" href={getNoteUrl(note)}>
+              {note.data.title}
+            </a>
+          </div>
+          <div class="text-gray-400 text-right">
+            {note.data.date && dateFormat.format(new Date(note.data.date))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</PageLayout>

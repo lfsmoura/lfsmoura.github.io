@@ -1,0 +1,29 @@
+---
+import socialProfiles from '../data/social-profiles.json';
+---
+
+<footer
+  class="py-10 flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-4 lg:gap-0 bg-gradient-to-b from-transparent to-gray-200 lg:to-transparent"
+>
+  <ul
+    class="inline-flex justify-around lg:justify-start w-full lg:w-auto gap-0 lg:gap-4"
+  >
+    {socialProfiles.map((profile) => (
+      <li>
+        <a href={profile.url}>{profile.name}</a>
+      </li>
+    ))}
+  </ul>
+  <p role="presentation" class="hidden lg:flex">&bull;</p>
+  <div
+    class="flex items-center justify-items-center lg:text-sm text-gray-500 text-center lg:text-right gap-4"
+  >
+    <span>CC BY-NC-SA 4.0</span>
+    <span>
+      <a
+        href="#"
+        onclick="alert('Opinions are my own and not necessarily the views of my employer')"
+      >Disclaimer</a>
+    </span>
+  </div>
+</footer>

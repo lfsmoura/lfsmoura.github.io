@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+
+const projects = await getCollection('projects');
+const project = projects.find((p) => p.data.permalink === '/life-collection');
+
+if (!project) {
+  throw new Error('Life Collection project not found');
+}
+
+const { Content } = await project.render();
+---
+
+<ProjectLayout frontmatter={project.data}>
+  <Content />
+</ProjectLayout>

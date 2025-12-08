@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date?: Date;
+    author?: string;
+    status?: string;
+    type?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const currentUrl = Astro.url.pathname;
+
+const yearFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+});
+---
+
+<BaseLayout title={frontmatter.title}>
+  <article class="w-full max-w-full">
+    <header class="post-header flex items-center justify-between w-full">
+      <h1 itemprop="name headline">{frontmatter.title}</h1>
+      {frontmatter.date && (
+        <time
+          class="text-gray-500 h-full"
+          datetime={frontmatter.date.toISOString()}
+          itemprop="datePublished"
+        >
+          [{yearFormat.format(frontmatter.date)}]
+        </time>
+      )}
+      {frontmatter.author && (
+        <p class="mb-4">
+          &bull;
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{frontmatter.author}</span>
+          </span>
+        </p>
+      )}
+    </header>
+
+    <div class="w-full">
+      <slot />
+    </div>
+
+    <a class="u-url" href={currentUrl} hidden></a>
+  </article>
+</BaseLayout>

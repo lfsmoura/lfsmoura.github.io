@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes
+    .filter((note) => {
+      // Filter out notes that have root-level permalinks (like /now, /metarunes, /democratizing-frames)
+      const permalink = note.data.permalink;
+      if (!permalink) return true;
+      // Only include notes with /notes/ prefix or no prefix
+      return permalink.startsWith('/notes/');
+    })
+    .map((note) => {
+      let slug;
+      if (note.data.permalink) {
+        // Remove /notes/ prefix
+        slug = note.data.permalink.replace(/^\/notes\//, '');
+      } else {
+        // Use filename (UUID) as slug
+        slug = note.slug;
+      }
+      return {
+        params: { slug },
+        props: { note },
+      };
+    });
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<NoteLayout frontmatter={note.data}>
+  <Content />
+</NoteLayout>
