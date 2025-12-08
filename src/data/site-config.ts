@@ -6,10 +6,12 @@ export const SITE_CONFIG = {
   twitter_username: 'lfsmoura',
   github_username: 'lfsmoura',
   linkedin_username: 'leonardomoura',
+  bluesky_username: 'lfsmoura.bsky.social',
   google_analytics: 'G-7V715D7REL',
 };
 
 export const HEADER_PAGES = [
+  { title: 'Posts', url: '/posts' },
   { title: 'Notes', url: '/notes' },
   { title: 'Now', url: '/now' },
   { title: 'Get some time with me', url: '/schedule' },

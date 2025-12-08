@@ -1,7 +1,35 @@
 ---
+import { getCollection } from 'astro:content';
 import HomeLayout from '../layouts/HomeLayout.astro';
 import Publications from '../components/Publications.astro';
 import socialProfiles from '../data/social-profiles.json';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = getDateFromSlug(a.slug);
+  const dateB = getDateFromSlug(b.slug);
+  return dateB.getTime() - dateA.getTime();
+});
+
+function getDateFromSlug(slug: string): Date {
+  const parts = slug.split('-');
+  return new Date(`${parts[0]}-${parts[1]}-${parts[2]}T00:00:00Z`);
+}
+
+function getPostUrl(slug: string): string {
+  const parts = slug.split('-');
+  const year = parts[0];
+  const month = parts[1];
+  const day = parts[2];
+  const postSlug = parts.slice(3).join('-');
+  return `/${year}/${month}/${day}/${postSlug}`;
+}
+
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
 ---
 
 <HomeLayout title="Leo Moura">
@@ -20,6 +48,19 @@ import socialProfiles from '../data/social-profiles.json';
   <p>
     If you are interested in my career, check my <a href={socialProfiles[3].url}>Linkedin</a>
   </p>
+
+  <h2>Posts</h2>
+
+  <ul>
+    {sortedPosts.map((post) => (
+      <li>
+        <a href={getPostUrl(post.slug)}>{post.data.title}</a>
+        <span class="text-gray-500 text-sm ml-2">
+          {dateFormat.format(getDateFromSlug(post.slug))}
+        </span>
+      </li>
+    ))}
+  </ul>
 
   <h2>Think I'm currently interested in</h2>
 

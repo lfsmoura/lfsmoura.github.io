@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = getDateFromSlug(a.slug);
+  const dateB = getDateFromSlug(b.slug);
+  return dateB.getTime() - dateA.getTime();
+});
+
+function getDateFromSlug(slug: string): Date {
+  const parts = slug.split('-');
+  return new Date(`${parts[0]}-${parts[1]}-${parts[2]}T00:00:00Z`);
+}
+
+function getPostUrl(slug: string): string {
+  const parts = slug.split('-');
+  const year = parts[0];
+  const month = parts[1];
+  const day = parts[2];
+  const postSlug = parts.slice(3).join('-');
+  return `/${year}/${month}/${day}/${postSlug}`;
+}
+
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<PageLayout title="Posts">
+  <section class="w-full">
+    <ul>
+      {sortedPosts.map((post) => (
+        <li class="flex flex-col lg:flex-row justify-between border-b-2 py-2 gap-2 m-0">
+          <div class="flex">
+            <a class="post-link" href={getPostUrl(post.slug)}>
+              {post.data.title}
+            </a>
+          </div>
+          <div class="text-gray-400 text-right">
+            {dateFormat.format(getDateFromSlug(post.slug))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</PageLayout>
