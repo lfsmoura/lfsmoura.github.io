@@ -1,20 +1,24 @@
 ---
-title: Algebraic Apps
+title: How Implicit Is Your Code?
+subtitle: Six problems that illustrate why Claude Code doesn't get you
+image: /assets/post-images/leosix.jpg
 ---
 
-Peter Naur’s [Programming as Theory Building](https://pages.cs.wisc.edu/~remzi/Naur.pdf) talks about how real software systems can be thought as mental models inside programmer's head. The actual code is only a projection or partial encoding of the mental model. Go and read the paper it's worth it.
+Peter Naur's [Programming as Theory Building](https://pages.cs.wisc.edu/~remzi/Naur.pdf) talks about how real software systems can be thought of as mental models inside a programmer's head. The actual code is only a projection or partial encoding of the mental model. Go and read the paper, it's worth it.
 
-I've been thinking how we now have such amazing AI-assisted coding tools, but the way we write code haven't changed. Even though AI is writing code, the theory of the code is still inside the mind of engineers. How to get the theory of a system out of the programmer's head and make it explicit in the code base? Is that even possible?
+I've been thinking how we now have such amazing AI-assisted coding tools, but the way we write code hasn't changed. Even though AI is writing code, the theory of the code is still inside the mind of engineers. How to get the theory of a system out of the programmer's head and make it explicit in the code base? Is that even possible?
 
-It seems like AI today is able to build amazing starter projects, but the more the operator has opinions about how things should behave, the harder it is for AI to build it. And it's specially hard for larger projects. I believe is not just because of context size. Only really well-structured apps can get into an stage where they can be easily maintained. And they get well-structured by following conventions. Those conventions are mostly not explicit, though some of them are.
+It seems like AI today is able to build amazing starter projects, but the more the operator has opinions about how things should behave, the harder it is for AI to build it. And it's especially hard for larger projects. I believe it's not just because of context size. Only really well-structured apps can get into a stage where they can be easily maintained. And they get well-structured by following conventions. Those conventions are mostly not explicit, though some of them are.
 
-Before I get lost rambling about structure. Let's discuss how software systems evolve, as that will outline some of the problems I see with current specification technologies. Modern applications tend to grow like sedimentary layers: we add features, we change constraints locally, external services appear and disappear. Over time, we end up with systems where validation, synchronization, invariants, execution timing, code structure, and migrations are all scattered across multiple layers and files. -- Even if you systematize migrations, the effects they are probably scattered as well.
+Before I get lost rambling about structure, let's discuss how software systems evolve, as that will outline some of the problems I see with current specification technologies. Modern applications tend to grow like sedimentary layers: we add features, we change constraints locally, external services appear and disappear. Over time, we end up with systems where validation, synchronization, invariants, execution timing, code structure, and migrations are all scattered across multiple layers and files. — Even if you systematize migrations, the effects are probably scattered as well.
+
+The consequence: you can't think "locally" about the code. To understand or modify any piece, you need to hold the entire system in your head. Adding a field, changing a validation rule, or understanding who can do what demands tracing through multiple layers. This context overhead is exactly what makes AI-assisted coding fail epically on larger projects: neither man nor machine can fit the implicit dependencies in them heads.
 
 ## Codifying assumptions
 
-The limits of our language are the limits of my world - paraphrasing Wittgenstein. Could we view states and operations as elements with explicit laws (like idempotent, associative, commutative, monotone), and then build tooling and architecture around those laws? that would make validation, sync, migrations and composition safer and more predictable.
+If we can't name something, we can't reason about it systematically. The limits of our language are the limits of our world, paraphrasing Wittgenstein. Could we view states and operations as elements with explicit laws (like idempotent, associative, commutative, monotone), and then build tooling and architecture around those laws? That would make validation, sync, migrations and composition safer and more predictable.
 
-There's a lot to unpack here and I am still lapidating those ideas. So before this get too abstract, I want to expose how I am thinking through six software maintainability problems and how I fell we could do better:
+There's a lot to unpack here and I am still refining those ideas. So before this gets too abstract, I want to expose how I am thinking through six software maintainability problems and how I feel we could do better:
 
 ### Problem 1: Validation logic scattered across layers
 
@@ -33,7 +37,7 @@ You see patterns like:
 
 Consequences:
 
-- It is hard to answer questions about the code unless we check **all** the code. For example, let's suppose I want to answer what users can change some property of theirs. I would have to check all the places that such property can be changed and weather users have access to it. In a better system there would be a single place where that property is defined.
+- It is hard to answer questions about the code unless we check **all** the code. For example, let's suppose I want to answer whether users can change a property of theirs. I would have to check all the places that such property can be changed and whether users have access to it. In a better system there would be a single place where that property is defined.
 - Changes are dangerous: adding a new constraint requires hunting for all the layers that also need it.
 - Offline-first gets really hard to implement: Offline or partially-connected clients cannot easily reuse the same rules they rely on when online.
 
@@ -51,7 +55,17 @@ Algebraically, you can think of a "domain action" as:
 Action = (Validation_1 ∧ Validation_2 ∧ … ∧ Validation_n) ⇒ Mutation
 ```
 
-where each validation declares the storages it needs, not whether it is "client-side" or "server-side". The same action can then be executed:
+For example, an `UpdateEmail` action might look like:
+
+```
+UpdateEmail = (
+  isValidEmailFormat(newEmail)        // local, pure
+  ∧ isNotCurrentEmail(user, newEmail) // local, needs user store
+  ∧ isEmailUnique(newEmail)           // global, needs user store
+) ⇒ setUserEmail(user, newEmail)
+```
+
+Where each validation declares the storages it needs, not whether it is "client-side" or "server-side". The same action can then be executed:
 
 - With a partial set of storages (offline client) – only the validations that can run will run.
 - With the full set (canonical server) – the complete rule set is enforced.
@@ -91,7 +105,7 @@ Then synchronization between two replicas of a value v becomes:
 v_merged = merge(v_canonical, v_replica)
 ```
 
-where merge is associative, commutative and idempotent whenever possible. That gives you:
+where merge is associative, commutative and idempotent whenever possible. Because `merge` is idempotent, syncing the same event twice produces the same result — no need for deduplication logic. That gives you:
 
 - Convergence regardless of the order in which replicas sync.
 - The ability to compact logs.
@@ -143,7 +157,7 @@ Understanding the lifecycle of a business operation can require chasing through 
 - The UI calls an API.
 - A job runs hours later and touches another service.
 
-There is no single object you can inspect and say: "this is the action, and these are all the allowed execution contexts and timing policies." We also are not sure if there are places in the codebase where operations can fail halfway and we get on invalid states.
+There is no single object you can inspect and say: "this is the action, and these are all the allowed execution contexts and timing policies." We also are not sure if there are places in the codebase where operations can fail halfway and we get into invalid states.
 
 *I propose* we separate:
 
@@ -178,9 +192,7 @@ Over time, code tends to become intertwined:
 
 It is the familiar "headphone cable" problem: everything works, but untangling or reusing one piece is painful.
 
-What I would like instead
-Deliverability Audit
-Think of code in layers and blocks:
+*What I would like instead*: Think of code in layers and blocks:
 
 1. **Capabilities** - Small, focused Effects with stable input and output types, representing "what the system can do" (e.g. getUserByEmail, createSession, sendEmail). They do not know about HTTP, UI, or timing.
 2. **Features / flows** - "Glue files" that compose capabilities into higher-level operations: login flows, registration flows, billing flows. They orchestrate capabilities, but do not embed infrastructure details.
@@ -244,7 +256,9 @@ I would like to (without unneeded complexity):
 - Declare properties of operations and states explicitly (idempotent, associative, commutative, monotone).
 - Give data types merge operations with clear laws (monoids, semilattices) where possible.
 - Centralize validation and invariants per operation.
-- Treating execution timing and infrastructure as separate concerns.
-- Using event sourcing as a stable backbone for evolution and migration.
+- Treat execution timing and infrastructure as separate concerns.
+- Use event sourcing as a stable backbone for evolution and migration.
 
-That's my dream: a system where composition, synchronization and evolution are guided by explicit laws. If you are interested in those themes DM me **today**.
+That's my dream: a system where composition, synchronization and evolution are guided by explicit laws.
+
+Have you, dear reader, thought about some of these issues? I'd love to hear your perspective — whether you've encountered similar problems, tried different approaches, or think I'm overcomplicating things. DM me on my socials with your feedback.

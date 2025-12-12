@@ -1,10 +1,8 @@
 ---
 title: npm install emotional-awareness
 draft-chat: https://chat.openai.com/c/b0758bb1-ff64-474a-81b6-24bf288cc41e
-image: assets/brainrun.jpg
+image: /assets/brainrun.jpg
 ---
-
-![Brain running from distressed programmer](/assets/brainrun.jpg "Controlling emotions")
 
 Software engineers suffer from procrastination. You're likely high in conscientiousness and have tried every trick to overcome it. Yet, nothing seems to work: you feel **stuck**.
 
