@@ -2,17 +2,19 @@
 title: Algebraic Apps
 ---
 
-Claude code has changed the game, but our tools haven't changed. We can build better tools now. Those new tools got to support this new paradigm: codebases were an extension of programmer's brains. As programmers get free to do higher level thinking, all the knowledge that once lived inside one's brain should become context on the code.
+Peter Naur’s [Programming as Theory Building](https://pages.cs.wisc.edu/~remzi/Naur.pdf) talks about how real software systems can be thought as mental models inside programmer's head. The actual code is only a projection or partial encoding of the mental model. Go and read the paper it's worth it.
 
-Our applications have too many implicit assumptions. We assume that validations have worked, that no forgotten code path was executed. What if we could encode our assumptions explicitly on our data model?
+I've been thinking how we now have such amazing AI-assisted coding tools, but the way we write code haven't changed. Even though AI is writing code, the theory of the code is still inside the mind of engineers. How to get the theory of a system out of the programmer's head and make it explicit in the code base? Is that even possible?
 
-Before I tell you how I plan to do that, let's discuss how we got here. Modern applications tend to grow like sedimentary layers: we add features, we change constraints locally, external services appear and disappear. Over time, we end up with systems where validation, synchronization, invariants, execution timing, code structure, and migrations are all scattered across multiple layers and files. -- Even if you systematize migrations, the effects they are probably scattered as well.
+It seems like AI today is able to build amazing starter projects, but the more the operator has opinions about how things should behave, the harder it is for AI to build it. And it's specially hard for larger projects. I believe is not just because of context size. Only really well-structured apps can get into an stage where they can be easily maintained. And they get well-structured by following conventions. Those conventions are mostly not explicit, though some of them are.
+
+Before I get lost rambling about structure. Let's discuss how software systems evolve, as that will outline some of the problems I see with current specification technologies. Modern applications tend to grow like sedimentary layers: we add features, we change constraints locally, external services appear and disappear. Over time, we end up with systems where validation, synchronization, invariants, execution timing, code structure, and migrations are all scattered across multiple layers and files. -- Even if you systematize migrations, the effects they are probably scattered as well.
 
 ## Codifying assumptions
 
-The limits of our language are the limits of my world - paraphrasing Wittgenstein. Could we view states and operations as elements with explicit laws (idempotent, associative, commutative, monotone), and then build tooling and architecture around those laws? that would make validation, sync, migrations and composition safer and more predictable.
+The limits of our language are the limits of my world - paraphrasing Wittgenstein. Could we view states and operations as elements with explicit laws (like idempotent, associative, commutative, monotone), and then build tooling and architecture around those laws? that would make validation, sync, migrations and composition safer and more predictable.
 
-There's a lot to unpack here and I am still lapidating those ideas. So let me explore how we build software today through six problems and how I fell we could do better:
+There's a lot to unpack here and I am still lapidating those ideas. So before this get too abstract, I want to expose how I am thinking through six software maintainability problems and how I fell we could do better:
 
 ### Problem 1: Validation logic scattered across layers
 
@@ -31,13 +33,11 @@ You see patterns like:
 
 Consequences:
 
-- It is hard to answer: "What does it mean for this operation to be valid?" There is no single place to point to.
+- It is hard to answer questions about the code unless we check **all** the code. For example, let's suppose I want to answer what users can change some property of theirs. I would have to check all the places that such property can be changed and weather users have access to it. In a better system there would be a single place where that property is defined.
 - Changes are dangerous: adding a new constraint requires hunting for all the layers that also need it.
-- Offline or partially-connected clients cannot easily reuse the same rules they rely on when online.
+- Offline-first gets really hard to implement: Offline or partially-connected clients cannot easily reuse the same rules they rely on when online.
 
-What I would like instead
-
-For each operation on the domain (e.g. UpdateProfile, CreateOrder), there should be a single definition of:
+*Ideally*, for each operation on the domain (e.g. UpdateProfile, CreateOrder), there should be a single definition of:
 
 - The input type and output type.
 - The set of validations as a pipeline:
@@ -63,17 +63,15 @@ The important point: validation and mutation are defined once, as a single objec
 Synchronization is often treated as an afterthought:
 
 - A sync job here, a webhook there, some ad-hoc reconciliation in a worker, and some extra code in the request path "just to be safe".
-- Each integration (CRM, billing, analytics, local caches, offline devices) ends up with its own sync strategy.
+- Each integration (e.g. CRM, local caches, offline devices) ends up with its own sync strategy.
 
 As a result:
 
 - There is no explicit model of where a piece of data is canonical and which storages are caches or replicas.
 - Conflict resolution rules are implemented informally and inconsistently.
-- Offline-first behaviour is hard to reason about, because everything depends on "how this particular component decided to sync".
+- Offline-first behavior is hard to reason about, because everything depends on "how this particular component decided to sync".
 
-What I would like instead
-
-Treat sync as a graph of Storages and Sync strategies:
+*We could do better* by treating sync as a graph of Storages and Sync strategies:
 
 - Each entity declares a canonical storage (e.g. "clients live canonically in HubSpot").
 - Other storages (IndexedDB, Postgres, Redis, another service) are caches or projections.
@@ -89,7 +87,9 @@ At the data level, use structures that admit a well-defined merge: monoids and s
 
 Then synchronization between two replicas of a value v becomes:
 
+```
 v_merged = merge(v_canonical, v_replica)
+```
 
 where merge is associative, commutative and idempotent whenever possible. That gives you:
 
@@ -110,12 +110,10 @@ But these properties are rarely encoded in the type system or in metadata. They 
 
 Consequences:
 
-- The runtime (or infrastructure) cannot use those properties to optimize or to enforce correct behaviour (e.g. automatic retries, deduplication, parallelization).
+- The runtime (or infrastructure) cannot use those properties to optimize or to enforce correct behavior (e.g. automatic retries, deduplication, parallelization).
 - It is easy to break invariants accidentally when touching code that was written with implicit assumptions.
 
-What I would like instead
-
-Treat operations and states as algebraic objects with explicit laws:
+*How to sleep worry-free*: Treat operations and states as algebraic objects with explicit laws:
 
 - Operations can declare: Idempotent, Pure, Commutative, Associative, Monotone, Compensable.
 - States/properties can declare:
@@ -127,10 +125,8 @@ This allows the runtime to:
 
 - Retry idempotent actions safely.
 - Deduplicate repeated actions.
-- Parallelize folds over associative/commutative reducers.
+- Undo actions when they are Compensable.
 - Merge replicas using the declared join when available.
-
-And it gives humans a place to look when asking "what are the invariants of this piece of state?".
 
 ### Problem 4: Execution timing scattered and implicit
 
@@ -145,15 +141,11 @@ Understanding the lifecycle of a business operation can require chasing through 
 
 - The user clicks a button.
 - The UI calls an API.
-- The API writes to a database and emits an event.
-- A consumer picks up the event and schedules a job.
 - A job runs hours later and touches another service.
 
-There is no single object you can inspect and say: "this is the action, and these are all the allowed execution contexts and timing policies."
+There is no single object you can inspect and say: "this is the action, and these are all the allowed execution contexts and timing policies." We also are not sure if there are places in the codebase where operations can fail halfway and we get on invalid states.
 
-What I would like instead
-
-Separate:
+*I propose* we separate:
 
 - What an operation does (its domain logic, validations, invariants).
 - Where and when it is executed (timer, user-triggered, reaction to an event, batch, etc.).
@@ -173,7 +165,7 @@ This is similar to the separation between a function and the context in which it
 - in a replay of a log;
 - in an offline client that queues operations.
 
-The time dimension is no longer hard-coded into the business logic; it is an orthogonal concern.
+The time dimension is no longer hard-coded into the business logic; it is an orthogonal concern (to use Silicon Valley's lingo).
 
 ### Problem 5: Code structure scattered and tangled
 
@@ -187,7 +179,7 @@ Over time, code tends to become intertwined:
 It is the familiar "headphone cable" problem: everything works, but untangling or reusing one piece is painful.
 
 What I would like instead
-
+Deliverability Audit
 Think of code in layers and blocks:
 
 1. **Capabilities** - Small, focused Effects with stable input and output types, representing "what the system can do" (e.g. getUserByEmail, createSession, sendEmail). They do not know about HTTP, UI, or timing.
@@ -220,9 +212,7 @@ This creates several problems:
 - Rolling back is dangerous or impossible.
 - Offline clients may have divergent or stale views that are not upgraded consistently.
 
-What I would like instead
-
-Use event sourcing as a base:
+*What I would like instead*: Use event sourcing as a base:
 
 - Treat the event log as the primary source of truth.
 - Treat current state as a projection over that log:
@@ -245,22 +235,16 @@ In an offline-first setting:
 
 Migrations become more about evolving how we interpret the log than about permanently mutating state in place.
 
-## My dream
+## My thinking
 
-All those problems stem from the same underlying issue: we lack a coherent, explicit model of what our operations and states are, and what laws they obey.
+All those problems stem from the same underlying issue: **we lack a coherent, explicit model of what our operations and states are, and what laws they obey.**
 
-An algebraic view does not require heavy formalism. It means:
+I would like to (without unneeded complexity):
 
-- Declaring properties of operations and states explicitly (idempotent, associative, commutative, monotone).
-- Giving data types merge operations with clear laws (monoids, semilattices) where possible.
-- Centralizing validation and invariants per operation.
+- Declare properties of operations and states explicitly (idempotent, associative, commutative, monotone).
+- Give data types merge operations with clear laws (monoids, semilattices) where possible.
+- Centralize validation and invariants per operation.
 - Treating execution timing and infrastructure as separate concerns.
 - Using event sourcing as a stable backbone for evolution and migration.
 
-From there, you can start building tooling:
-
-- A runtime that uses these properties to schedule, retry, sync and merge.
-- A code structure where features are composable blocks, not tangled edits.
-- A migration strategy that is repeatable and safer by construction.
-
-That's my dream: a system where composition, synchronization and evolution are guided by explicit laws.
+That's my dream: a system where composition, synchronization and evolution are guided by explicit laws. If you are interested in those themes DM me **today**.

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: white;
+}
+
 /* Menu */
 #nav-trigger:checked ~ #menu {
   display: block;
@@ -11,70 +15,15 @@
   @apply container mx-auto max-w-6xl px-3 lg:px-36;
 }
 
+.content-padding {
+  @apply p-3 lg:p-5;
+}
+
 nav a,
 footer a {
   @apply hover:underline;
 }
 
-main a {
-  @apply italic text-blue-800;
-}
-
-main p {
-  @apply my-4;
-}
-
 .external-link::after {
   content: " ↗";
-}
-
-main ul li {
-  @apply list-disc list-outside ml-4;
-}
-
-article img {
-  @apply mx-auto my-4;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold my-4;
-}
-
-h1,
-h2 {
-  @apply mb-4 mt-4;
-}
-
-h1 {
-  @apply text-2xl;
-}
-
-h2 {
-  @apply text-xl text-gray-800;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  @apply text-gray-600;
-}
-
-/* Astro/Shiki code blocks */
-pre {
-  @apply overflow-x-auto p-2 my-4 rounded;
-}
-
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-/* For inline code */
-:not(pre) > code {
-  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
 }

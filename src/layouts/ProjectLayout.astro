@@ -20,9 +20,9 @@ const yearFormat = new Intl.DateTimeFormat('en-US', {
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <article class="w-full max-w-full">
-    <header class="post-header flex items-center justify-between w-full">
-      <h1 itemprop="name headline">{frontmatter.title}</h1>
+  <article class="prose prose-blue max-w-none">
+    <header class="post-header flex items-center justify-between w-full not-prose">
+      <h1 class="!text-3xl !font-bold !mt-0" itemprop="name headline">{frontmatter.title}</h1>
       {frontmatter.date && (
         <time
           class="text-gray-500 h-full"
@@ -42,7 +42,7 @@ const yearFormat = new Intl.DateTimeFormat('en-US', {
       )}
     </header>
 
-    <div class="w-full">
+    <div>
       <slot />
     </div>
 

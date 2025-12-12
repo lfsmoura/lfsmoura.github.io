@@ -1,5 +1,10 @@
 ---
 import { SITE_CONFIG, HEADER_PAGES } from '../data/site-config';
+
+const SPRITE_COLS = 8;
+const SPRITE_ROWS = 4;
+const randomCol = Math.floor(Math.random() * SPRITE_COLS);
+const randomRow = Math.floor(Math.random() * SPRITE_ROWS);
 ---
 
 <header class="mb-6 px-3 lg:px-0" role="banner">
@@ -11,7 +16,14 @@ import { SITE_CONFIG, HEADER_PAGES } from '../data/site-config';
     window.blockScroll = blockScroll;
   </script>
   <div class="py-2 flex justify-between items-center">
-    <a class="font-bold text-2xl lg:text-4xl" rel="author" href="/">{SITE_CONFIG.titleEmoji} {SITE_CONFIG.title}</a>
+    <a class="font-bold text-2xl lg:text-4xl flex items-center gap-2" rel="author" href="/">
+      <span
+        class="inline-block w-8 h-8 lg:w-10 lg:h-10"
+        style={`background-image: url('/assets/spritesheet.png'); background-size: ${SPRITE_COLS * 100}% ${SPRITE_ROWS * 100}%; background-position: ${randomCol * (100 / (SPRITE_COLS - 1))}% ${randomRow * (100 / (SPRITE_ROWS - 1))}%;`}
+        aria-hidden="true"
+      ></span>
+      {SITE_CONFIG.title}
+    </a>
 
     <nav>
       <div>
@@ -45,4 +57,5 @@ import { SITE_CONFIG, HEADER_PAGES } from '../data/site-config';
       </div>
     </nav>
   </div>
+  <hr class="border-gray-200" />
 </header>
