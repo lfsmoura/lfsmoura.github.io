@@ -10,7 +10,7 @@ const { title, prose = false } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <div class:list={["w-full", { "prose prose-blue max-w-none": prose }]}>
+  <div class:list={["w-full", { "prose prose-blue dark:prose-invert max-w-none": prose }]}>
     {title && <h1 class="text-3xl font-bold mb-6">{title}</h1>}
     <slot />
   </div>

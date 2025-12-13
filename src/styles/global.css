@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: white;
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
 /* Menu */

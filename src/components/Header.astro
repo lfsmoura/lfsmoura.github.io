@@ -3,8 +3,10 @@ import { SITE_CONFIG, HEADER_PAGES } from '../data/site-config';
 
 const SPRITE_COLS = 8;
 const SPRITE_ROWS = 4;
-const randomCol = Math.floor(Math.random() * SPRITE_COLS);
-const randomRow = Math.floor(Math.random() * SPRITE_ROWS);
+const totalSprites = SPRITE_COLS * SPRITE_ROWS;
+const randomIndex = Math.floor(Math.random() * (totalSprites - 1)) + 1; // Skip index 0 (empty)
+const randomCol = randomIndex % SPRITE_COLS;
+const randomRow = Math.floor(randomIndex / SPRITE_COLS);
 ---
 
 <header class="mb-6 px-3 lg:px-0" role="banner">
@@ -12,8 +14,16 @@ const randomRow = Math.floor(Math.random() * SPRITE_ROWS);
     function blockScroll(isChecked) {
       document.body.style.overflow = isChecked ? 'hidden' : 'auto';
     }
-    // Make it available globally
+    function closeMenu() {
+      document.getElementById('nav-trigger').checked = false;
+      blockScroll(false);
+    }
+    function handleMenuKeydown(event) {
+      if (event.key === 'Escape') closeMenu();
+    }
     window.blockScroll = blockScroll;
+    window.closeMenu = closeMenu;
+    window.handleMenuKeydown = handleMenuKeydown;
   </script>
   <div class="py-2 flex justify-between items-center">
     <a class="font-bold text-2xl lg:text-4xl flex items-center gap-2" rel="author" href="/">
@@ -25,37 +35,35 @@ const randomRow = Math.floor(Math.random() * SPRITE_ROWS);
       {SITE_CONFIG.title}
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <div>
         <input type="checkbox" id="nav-trigger" class="hidden" onchange="blockScroll(this.checked)" />
-        <label for="nav-trigger" class="block lg:hidden cursor-pointer">
-          <span>
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
+        <label for="nav-trigger" class="block lg:hidden cursor-pointer p-2" aria-label="Open menu">
+          <svg viewBox="0 0 18 15" width="18px" height="15px" fill="currentColor" class="text-gray-900 dark:text-gray-100" aria-hidden="true">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
         </label>
 
-        <div id="menu" class="hidden absolute inset-0 z-50">
-          <div class="absolute inset-0 bg-black opacity-30" onclick="document.getElementById('nav-trigger').checked = false; blockScroll(false)"></div>
-          <div class="relative top-10 right-2 bg-gray-100 rounded-lg drop-shadow-md">
-            <ul class="grid">
+        <div id="menu" class="hidden absolute inset-0 z-50" onkeydown="handleMenuKeydown(event)">
+          <button type="button" class="absolute inset-0 bg-black opacity-30 w-full cursor-default" onclick="closeMenu()" aria-label="Close menu"></button>
+          <div class="relative top-10 right-2 bg-gray-100 dark:bg-gray-800 rounded-lg drop-shadow-md">
+            <ul class="grid" role="list">
               {HEADER_PAGES.map((page) => (
-                <a class="p-4 text-3xl" href={page.url}>{page.title}</a>
+                <li><a class="block p-4 text-3xl text-gray-900 dark:text-gray-100" href={page.url}>{page.title}</a></li>
               ))}
             </ul>
           </div>
         </div>
 
         <div>
-          <ul class="hidden lg:inline-flex">
+          <ul class="hidden lg:inline-flex" role="list">
             {HEADER_PAGES.map((page) => (
-              <a class="p-4 lg:px-4 lg:py-0" href={page.url}>{page.title}</a>
+              <li><a class="p-4 lg:px-4 lg:py-0" href={page.url}>{page.title}</a></li>
             ))}
           </ul>
         </div>
       </div>
     </nav>
   </div>
-  <hr class="border-gray-200" />
+  <hr class="border-gray-200 dark:border-gray-700" />
 </header>
